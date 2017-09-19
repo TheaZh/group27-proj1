@@ -1,2 +1,2 @@
 # IR-system
-Project1 for CSEE6111
+Project1 for COMS6111
