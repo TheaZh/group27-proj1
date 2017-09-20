@@ -10,6 +10,9 @@ import java.util.List;
 
 public class GoogleSearch {
 
+	private final String API_KEY = "AIzaSyBpMdM3c6XYISNPICI0qEdEECtRo5gemqA";
+	private final String ENGINE_KEY = "018258045116810257593:z1fmkqqt_di";
+
 	public static void main(String[] args) {
 		GoogleSearch test = new GoogleSearch();
 		test.get();
@@ -20,9 +23,9 @@ public class GoogleSearch {
 		Customsearch customsearch = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
 		
 	    try {
-	        com.google.api.services.customsearch.Customsearch.Cse.List list = customsearch.cse().list("java");
-	        list.setKey("AIzaSyBpMdM3c6XYISNPICI0qEdEECtRo5gemqA");
-	        list.setCx("018258045116810257593:z1fmkqqt_di");
+	        com.google.api.services.customsearch.Customsearch.Cse.List list = customsearch.cse().list("per se");
+	        list.setKey(API_KEY);
+	        list.setCx(ENGINE_KEY);
 	        Search results = list.execute();
 	        List<Result> items = results.getItems();
 	
