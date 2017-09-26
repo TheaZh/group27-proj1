@@ -53,7 +53,7 @@ public class Filter{
 
 	// add efficient terms in token list, filter those stopwords
 	// return tokens --> a efficient word list of this doc
-	private List<String> filterStopwords(List<String> tokens, String str){
+	public List<String> filterStopwords(List<String> tokens, String str){
 		String format = "\\d+.\\d+|\\w+|\\w+-w+";
 		Pattern pattern = Pattern.compile(format);
 		Matcher matcher = pattern.matcher(str);
@@ -83,7 +83,7 @@ public class Filter{
 	 * @return a table : <String, Integer>
 	 * the number of docs that a word appears in
 	 */
-	private Hashtable<String, Integer> getDFTable(){
+	public Hashtable<String, Integer> getDFTable(){
 		return dfTable;
 	}
 }
