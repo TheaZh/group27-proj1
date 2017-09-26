@@ -1,7 +1,9 @@
 import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Math;
+import java.util.Map;
+import java.util.Collections;
 
 public class Doc{
     List<String> docStrings;        // all the strings in this doc
@@ -42,13 +44,14 @@ public class Doc{
     }
 
     // get the document vector
-    public List<Double> getgetDocVector() {
+    public List<Double> getDocVector() {
         List<Double> vector = new ArrayList<>();
 
         for(int i=0; i<terms.size(); i++) {
             String term = terms.get(i);
             vector.add(Math.log10(1+tfTable.get(term)) * Math.log10(10/dfTable.get(term)));
         }
+        return vector;
     }
 
 
