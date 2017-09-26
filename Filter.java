@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.util.Hashtable;
 
-public class Filter{
+class Filter{
 	private Set<String> stopwords;
 	private Hashtable<String, Integer> dfTable;
 

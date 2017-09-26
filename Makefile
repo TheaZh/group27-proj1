@@ -7,7 +7,9 @@ CLASSPATH = libs/google-api-client-1.22.0.jar:libs/google-api-client-jackson2-1.
 	$(JC) $(JFLAGS) $(CLASSPATH) $*.java
 
 CLASSES = \
-	GoogleSearch.java
+	GoogleSearch.java \
+	Filter.java \
+	Doc.java
 
 default: classes
 

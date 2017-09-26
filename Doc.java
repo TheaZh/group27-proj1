@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Collections;
 
-public class Doc{
+class Doc{
     List<String> docStrings;        // all the strings in this doc
     List<String> terms;             // all the terms in all the docs
     Map<String, Integer> tfTable;   // termfrequncy table

@@ -8,10 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.List
-
-
-;
+import java.util.List;
 
 
 public class GoogleSearch {
@@ -61,10 +58,16 @@ public class GoogleSearch {
             List<String> docsStrList = search.getDocsStrings(items);
             List<Doc> docsList = new ArrayList<>();
             List<Boolean> isRelevant = new ArrayList<>();
+            List<List<String>> docEffectiveList = new ArrayList<>();
 
             for(int i = 0; i < items.size(); i++) {
-                Result result = items.get(i);
+                // split and filt stopword
                 String docStr = docsStrList.get(i);
+                List<String> tokens = new ArrayList<>();
+                filter.filterStopwords(tokens, docStr);
+                docEffectiveList.add(tokens);
+
+                Result result = items.get(i);
                 System.out.println("Title: "+ result.getTitle());
 	            System.out.println("URL: " + result.getLink());
 	            System.out.println("snippet: " + result.getSnippet());
@@ -80,6 +83,13 @@ public class GoogleSearch {
                     System.out.println("this is NOT relevant.");
                     isRelevant.add(false);
                 }
+            }
+
+            // create Doc Array
+            for(int i = 0; i < docEffectiveList.size(); i++) {
+                List<String> docEffective = docEffectiveList.get(i);
+                Doc doc = new Doc(docEffective, filter.getDFTable());
+                docsList.add(doc);
             }
 
             System.out.println(isRelevant.toString());
