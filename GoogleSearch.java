@@ -59,6 +59,7 @@ public class GoogleSearch {
             List<Doc> docsList = new ArrayList<>();
             List<Boolean> isRelevant = new ArrayList<>();
             List<List<String>> docEffectiveList = new ArrayList<>();
+            filter.clearDfTable();
 
             for(int i = 0; i < items.size(); i++) {
                 // split and filt stopword
@@ -88,7 +89,7 @@ public class GoogleSearch {
             // create Doc Array
             for(int i = 0; i < docEffectiveList.size(); i++) {
                 List<String> docEffective = docEffectiveList.get(i);
-                Doc doc = new Doc(docEffective, filter.getDFTable());
+                Doc doc = new Doc(docEffective, filter.getDfTable());
                 docsList.add(doc);
             }
 

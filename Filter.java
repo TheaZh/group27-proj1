@@ -83,7 +83,11 @@ class Filter{
 	 * @return a table : <String, Integer>
 	 * the number of docs that a word appears in
 	 */
-	public Hashtable<String, Integer> getDFTable(){
+	public Hashtable<String, Integer> getDfTable(){
 		return dfTable;
+	}
+
+    public void clearDfTable(){
+		dfTable.clear();
 	}
 }
