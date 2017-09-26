@@ -50,7 +50,7 @@ public class Doc{
 	}
 
      */
-    private void computeTermsWeight(Map<String, Double> termsWeight, Map<String, Integer> dfMap){
+    public void computeTermsWeight(Map<String, Double> termsWeight, Map<String, Integer> dfMap){
         for(Map.Entry<String, Integer> entry : tfMap.entrySet()){
             String term = entry.getKey();
             Integer fre = entry.getValue();

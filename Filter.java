@@ -7,20 +7,21 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.util.*;
 
 public class Filter{
 	private Set<String> stopwords;
-	private Hashtable<String, Integer> dfTable;
-	private HashSet<String> wordSet
+	private Map<String, Integer> dfMap;
+	//private HashSet<String> wordSet;
 	
-	public Filter(){
+	public Filter(Map<String, Integer> df){
 		stopwords = new HashSet<String>();
-		dfTable = new Hashtable<String, Integer>();
-		wordSet = new HashSet<String>();
+		this.dfMap = df;
 		getStopwords();
 	}
 
 	// debug
+	/*
 	public static void main(String[] args) {
 		Filter filter = new Filter();
 		//Set<String> t = filter.getStopwords();
@@ -28,6 +29,7 @@ public class Filter{
 		filter.filterStopwords(list, "a book-about of Java 3.33");
 		System.out.println(list.toString());
 	}
+	*/
 
 	// read stopword file, and create a stopword set
 	private void getStopwords(){
@@ -54,10 +56,12 @@ public class Filter{
 
 	// add efficient terms in token list, filter those stopwords
 	// return tokens --> a efficient word list of this doc
-	private List<String> filterStopwords(List<String> tokens, String str){
+	public List<String> filterStopwords(String str){
+		List<String> tokens = new ArrayList<String>();
 		String format = "\\d+.\\d+|\\w+|\\w+-w+";
 		Pattern pattern = Pattern.compile(format);
 		Matcher matcher = pattern.matcher(str);
+		Set<String> wordSet = new HashSet<String>();
 		while(matcher.find()){
 			String token = matcher.group();
 			// not a stopword
@@ -69,10 +73,10 @@ public class Filter{
 				 * the number of doc that word appears in ++ 
 				 */
 				if(wordSet.add(token)){
-					if(!dfTable.containsKey(token)){
-						dfTable.put(token, 0);
+					if(!dfMap.containsKey(token)){
+						dfMap.put(token, 0);
 					}
-					dfTable.put(token, dfTable.get(token)+1);
+					dfMap.put(token, dfMap.get(token)+1);
 				}
 			}
 		}
@@ -83,7 +87,7 @@ public class Filter{
 	 * @return a table : <String, Integer> 
 	 * the number of docs that a word appears in
 	 */
-	private Hashtable<String> getDFTable(){
-		return dfTable;
+	public Map<String, Integer> getDFMap(){
+		return this.dfMap;
 	}
 }

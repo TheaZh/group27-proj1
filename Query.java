@@ -3,11 +3,12 @@ import java.util.*;
 public class Query{
 
 	private List<String> words;
-	public Query(String searchWord){
+	public Query(String searchWord, Map<String, Integer> dfMap){
 		words = new ArrayList<String>();
 		String[] keywords = searchWord.split("\\s+");
 		for(int i = 0; i<keywords.length;i++){
 			words.add(keywords[i]);
+			dfMap.put(keywords[i], 0);
 		}
 	}
 
