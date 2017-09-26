@@ -49,6 +49,7 @@ public class Doc{
             String term = terms.get(i);
             vector.add(Math.log10(1+tfTable.get(term)) * Math.log10(10/dfTable.get(term)));
         }
+        return vector;
     }
 
 
