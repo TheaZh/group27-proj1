@@ -3,7 +3,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Doc{
+	// tfTable <String, Integer>  <-->  <term, frequency> 
 	private Hashtable<String, Integer> tfTable;
+
 
 	public Doc(List<String> tokens){
 		// count the frequency of each token
@@ -17,6 +19,8 @@ public class Doc{
 			}
 		}
 	}
+
+
 
 
 }

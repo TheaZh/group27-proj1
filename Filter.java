@@ -19,9 +19,9 @@ public class Filter{
 	public static void main(String[] args) {
 		Filter filter = new Filter();
 		//Set<String> t = filter.getStopwords();
-		//List<String> list = new ArrayList<String>();
-		//filter.filterStopwords(list, "a book about of Java");
-		//System.out.println(list.toString());
+		List<String> list = new ArrayList<String>();
+		filter.filterStopwords(list, "a book-about of Java 3.33");
+		System.out.println(list.toString());
 	}
 
 	// read stopword file, and create a stopword set
@@ -33,7 +33,7 @@ public class Filter{
 			String line = null;
 			while((line = br.readLine()) != null){
 				stopwords.add(line);
-				System.out.println(line);
+				//System.out.println(line);
 			}
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -49,8 +49,8 @@ public class Filter{
 	}
 
 	// add efficient terms in token list, filter those stopwords
-	private void filterStopwords(List<String> tokens, String str){
-		String format = "\\d+.\\d|\\w+";
+	private List<String> filterStopwords(List<String> tokens, String str){
+		String format = "\\d+.\\d+|\\w+|\\w+-w+";
 		Pattern pattern = Pattern.compile(format);
 		Matcher matcher = pattern.matcher(str);
 
@@ -61,5 +61,6 @@ public class Filter{
 				tokens.add(token);
 			}
 		}
+		return tokens;
 	}
 }
