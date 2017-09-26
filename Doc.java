@@ -22,6 +22,7 @@ class Doc{
 	public Doc(List<String> documentStringList, Map<String, Integer> df){
         this.docStrings = documentStringList;
         this.terms = this.getAllTerms(df);
+        this.dfTable = df;
 
         // count the term frequency
         this.tfTable = new HashMap<String, Integer>();
