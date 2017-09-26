@@ -34,7 +34,7 @@ class Doc{
         }
 
         this.d = this.getDocVector();
-        System.out.println(this.d.toString());
+        // System.out.println(this.d.toString());
 	}
 
     // get sorted terms in all docs

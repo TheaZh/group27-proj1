@@ -127,7 +127,7 @@ public class GoogleSearch {
                 docsList.add(doc);
             }
 
-            System.out.println(isRelevant.toString());
+            // System.out.println(isRelevant.toString());
 
             // decide precision
             int num_relevant = 0;
