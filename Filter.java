@@ -7,11 +7,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.util.Hashtable;
 
 public class Filter{
 	private Set<String> stopwords;
 	private Hashtable<String, Integer> dfTable;
-	
+
 	public Filter(){
 		stopwords = new HashSet<String>();
 		dfTable = new Hashtable<String, Integer>();
@@ -62,10 +63,10 @@ public class Filter{
 			// not a stopword
 			if(!stopwords.contains(token)){
 				//System.out.println(token);
-				tokens.add(token); 
+				tokens.add(token);
 				/*
 				 * if it's the first time that the term appears in this doc
-				 * the number of doc that word appears in ++ 
+				 * the number of doc that word appears in ++
 				 */
 				if(tmpSet.add(token)){
 					if(!dfTable.containsKey(token)){
@@ -79,10 +80,10 @@ public class Filter{
 	}
 
 	/*
-	 * @return a table : <String, Integer> 
+	 * @return a table : <String, Integer>
 	 * the number of docs that a word appears in
 	 */
-	private Hashtable<String> getDFTable(){
+	private Hashtable<String, Integer> getDFTable(){
 		return dfTable;
 	}
 }
