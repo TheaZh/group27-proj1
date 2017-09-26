@@ -7,6 +7,11 @@ import com.google.api.services.customsearch.model.Search;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List
+
+
+;
 
 
 public class GoogleSearch {
@@ -22,7 +27,7 @@ public class GoogleSearch {
 	        list.setKey(API_KEY);
 	        list.setCx(ENGINE_KEY);
 	        Search results = list.execute();
-	        List<Result> items = results.getItems();
+	        items = results.getItems();
 
 	    } catch (IOException e) {
 	        // TODO Auto-generated catch block
@@ -37,11 +42,12 @@ public class GoogleSearch {
             StringBuilder sb = new StringBuilder();
             sb.append(result.getTitle());
             sb.append(" ");
-            sb.append(result.result.getLink());
+            sb.append(result.getLink());
             sb.append(" ");
-            sb.append(result.result.getSnippet());
+            sb.append(result.getSnippet());
             docsStrList.add(sb.toString());
         }
+        return docsStrList;
     }
 
     public static void main(String[] args) {
@@ -62,9 +68,10 @@ public class GoogleSearch {
                 System.out.println("Title: "+ result.getTitle());
 	            System.out.println("URL: " + result.getLink());
 	            System.out.println("snippet: " + result.getSnippet());
-	            System.out.println("----------------------");
-                String feedback = sc.nextLine();
+	            System.out.println("----------------------\n");
+
                 System.out.println("Is it relevant? Enter 'y' for yes, 'n' for no.");
+                String feedback = sc.nextLine();
                 if(feedback.equals("y")) {
                     System.out.println("this is relevant.");
                     isRelevant.add(true);
