@@ -56,8 +56,8 @@ public class GoogleSearch {
         query.add("per");
         query.add("se");
 
-        System.out.println("args len: " + args.length);
-        System.out.println(Arrays.toString(args));
+        // System.out.println("args len: " + args.length);
+        System.out.println("query is " + Arrays.toString(args));
 
         // args
         if(args.length < 4 && args.length >0) {
@@ -67,6 +67,7 @@ public class GoogleSearch {
             "<precision> is the target value for precision@10, a real number between 0 and 1\n" +
             "<query> is your query, a list of words in double quotes (e.g., “Milky Way”)\n"
             );
+            System.exit(0);
         }
 
 		GoogleSearch search = new GoogleSearch();
