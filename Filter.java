@@ -10,8 +10,11 @@ import java.io.IOException;
 
 public class Filter{
 	private Set<String> stopwords;
+	private Hashtable<String, Integer> dfTable;
 	
 	public Filter(){
+		stopwords = new HashSet<String>();
+		dfTable = new Hashtable<String, Integer>();
 		getStopwords();
 	}
 
@@ -26,7 +29,6 @@ public class Filter{
 
 	// read stopword file, and create a stopword set
 	private void getStopwords(){
-		stopwords = new HashSet<String>();
 		BufferedReader br = null;
 		try{
 			br = new BufferedReader(new FileReader("sup/proj1-stopword.txt"));
@@ -49,18 +51,38 @@ public class Filter{
 	}
 
 	// add efficient terms in token list, filter those stopwords
+	// return tokens --> a efficient word list of this doc
 	private List<String> filterStopwords(List<String> tokens, String str){
 		String format = "\\d+.\\d+|\\w+|\\w+-w+";
 		Pattern pattern = Pattern.compile(format);
 		Matcher matcher = pattern.matcher(str);
-
+		HashSet<String> tmpSet = new HashSet<String>();
 		while(matcher.find()){
 			String token = matcher.group();
+			// not a stopword
 			if(!stopwords.contains(token)){
-				System.out.println(token);
-				tokens.add(token);
+				//System.out.println(token);
+				tokens.add(token); 
+				/*
+				 * if it's the first time that the term appears in this doc
+				 * the number of doc that word appears in ++ 
+				 */
+				if(tmpSet.add(token)){
+					if(!dfTable.containsKey(token)){
+						dfTable.put(token, 0);
+					}
+					dfTable.put(token, dfTable.get(token)+1);
+				}
 			}
 		}
 		return tokens;
+	}
+
+	/*
+	 * @return a table : <String, Integer> 
+	 * the number of docs that a word appears in
+	 */
+	private Hashtable<String> getDFTable(){
+		return dfTable;
 	}
 }
