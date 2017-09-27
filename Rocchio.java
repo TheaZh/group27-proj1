@@ -1,5 +1,5 @@
 import java.util.*;
-public class Rocchio{
+class Rocchio{
 
 	private List<Doc> relevantDocs;
 	private List<Doc> nonrelevantDocs;
@@ -10,28 +10,31 @@ public class Rocchio{
 	private final double GAMMA = 0.15;
 
 	public static void main(String[] args) {
-		Query query = new Query("mask");
-		
 		Map<String, Integer> dfMap = new HashMap<String, Integer>();
 		dfMap.put("mask",2);dfMap.put("table",2);dfMap.put("cost",1);dfMap.put("ask",4);
-
-		Rocchio test = new Rocchio(dfMap);
-		test.computeQ(query);
+        Query query = new Query("mask", dfMap);
+		// Rocchio test = new Rocchio(dfMap);
+		// test.computeQ(query);
 
 	}
 
+    /**
+    * Constructs a Rocchio object with relevant doc and non-relevant docs
+    * @param df the document frequency map computed by filter each iteration
+    * @param relDocList the list of relevant docs
+    * @param nonRelList the list of non-relevant docs
+    * @return a new Rocchio object
+    */
 	public Rocchio(Map<String, Integer> df, List<Doc> relDocList, List<Doc> nonRelList){
 		/*
-		 * compute q 
+		 * compute q
 		 */
 		dfMap = df;
 		relevantDocs = relDocList;
 		nonrelevantDocs = nonRelList;
-
-
 	}
 
-	/*
+	/**
 	 * compute the Q vector
 	 */
 	private void computeQ(Query query){
@@ -56,7 +59,7 @@ public class Rocchio{
 						qTFMap.put(term, 0);
 					}
 					qTFMap.put(term, qTFMap.get(term)+d.getTFMap().get(term));
-				}	
+				}
 			}
 		}
 
@@ -110,11 +113,7 @@ public class Rocchio{
 				qTermsWeight.put(term, 0.0);
 			}
 			double weight = relevant - non_relevant;
-			qTermsWeight.put(term, qTermsWeight.get(term)+weight);
+			qTermsWeight.put(term, qTermsWeight.get(term) + weight);
 		}
-
 	}
-
-	
-
 }

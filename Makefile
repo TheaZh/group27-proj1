@@ -9,7 +9,9 @@ CLASSPATH = libs/google-api-client-1.22.0.jar:libs/google-api-client-jackson2-1.
 CLASSES = \
 	GoogleSearch.java \
 	Filter.java \
-	Doc.java
+	Doc.java \
+	Query.java \
+	Rocchio.java
 
 default: classes
 

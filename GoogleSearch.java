@@ -135,17 +135,24 @@ public class GoogleSearch {
             for(int i = 0; i < docEffectiveList.size(); i++) {
                 List<String> docEffective = docEffectiveList.get(i);
                 Doc doc = new Doc(docEffective);
+                doc.computeTermsWeight(filter.getDfMap());
                 docsList.add(doc);
             }
 
             // now we have a List of Doc, and a List of boolean for according relevance
 
             // decide precision
-            int num_relevant = 0;
+            List<Doc> relDocList = new ArrayList<>();
+            List<Doc> nonRelList = new ArrayList<>();
             for(int i = 0; i < isRelevant.size(); i++) {
-                if(isRelevant.get(i)) num_relevant++;
+                if(isRelevant.get(i)) {
+                    relDocList.add(docsList.get(i));
+                }
+                else {
+                    nonRelList.add(docsList.get(i));
+                }
             }
-            float this_precision = (float)num_relevant / (float) isRelevant.size();
+            float this_precision = (float)relDocList.size() / (float) docsList.size();
             System.out.println("precision is " + this_precision);
             if(this_precision >= precision) {
                 System.out.println("precision >= " + precision);
@@ -155,6 +162,9 @@ public class GoogleSearch {
                 System.out.println("precision = 0");
                 break;
             }
+
+            // Rocchio algo = new Rocchio(filter.getDfMap(), relDocList, nonRelList);
+
 
             // TODO update the query using Rocchio
             search.query = "java is good";

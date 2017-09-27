@@ -1,50 +1,50 @@
 import java.util.*;
 
-public class Query{
+class Query{
 
-	private List<String> words;
-	public Query(String searchWord, Map<String, Integer> dfMap){
-		words = new ArrayList<String>();
+	private Set<String> searchWords;
+    private Map<String, Integer> dfMap;
+    public Map<String, Double> qTermsWeight;
+    /**
+    * Constructs a query object
+    */
+	public Query(String searchWord, Map<String, Integer> dfMapIn) {
+		searchWords = new HashSet<String>();
+        dfMap = dfMapIn;
+        qTermsWeight = new HashMap<String, Double>();
+
 		String[] keywords = searchWord.split("\\s+");
-		for(int i = 0; i<keywords.length;i++){
-			words.add(keywords[i]);
-			dfMap.put(keywords[i], 0);
+		for(int i = 0; i<keywords.length; i++){
+			searchWords.add(keywords[i]);
 		}
+        computeQTermsWeight();
 	}
 
 	// debug
-	/* 
 	public static void main(String[] args) {
-		String searchWord = "mask";
-		Query query = new Query(searchWord);
+		String searchWord = "mask table";
+
 		Map<String, Integer> dfMap = new HashMap<String, Integer>();
-		dfMap.put("mask",2);dfMap.put("table",2);dfMap.put("cost",1);dfMap.put("ask",4);
-		Map<String, Integer> qTFMap = new HashMap<String, Integer>();
-		qTFMap.put("mask", 100); 
-		Map<String, Double> test = query.getQTermsWeight(dfMap, qTFMap);
-		for(Map.Entry<String, Double> en: test.entrySet()){
-			System.out.println("word, weight: " + en.getKey() + " --> " + en.getValue());
-		}
-	}
-	*/
-	public List<String> getTermList(){
-		return words;
+		dfMap.put("mask",2);dfMap.put("table",9);dfMap.put("cost",1);dfMap.put("ask",4);
+
+        Query query = new Query(searchWord, dfMap);
+        System.out.println("This query vector is: " + query.getQTermsWeight().toString());
 	}
 
-	public Map<String, Double> getQTermsWeight(Map<String, Integer> dfMap, 
-													Map<String, Integer> qTFMap){
-		Map<String, Double> tmpTermsWeight = new HashMap<>();
-		for(Map.Entry<String, Integer> en : qTFMap.entrySet()){
-			String term = en.getKey();
-			int df = dfMap.get(term);
-			int tf = qTFMap.get(term);
-			double weight = (double)Math.log10(1.0+qTFMap.get(term)) * Math.log10(10/dfMap.get(term));
-
-			if(!tmpTermsWeight.containsKey(term)){
-				tmpTermsWeight.put(term, 0.0);
-			}
-			tmpTermsWeight.put(term, tmpTermsWeight.get(term)+weight);
-		}
-		return tmpTermsWeight;
+	public Set<String> getTermList(){
+		return searchWords;
 	}
+
+	public void computeQTermsWeight() {
+        for(String term : this.searchWords) {
+            int df = dfMap.get(term);
+			int tf = 1;  // in q query each word frequency should be 1
+            double weight = (double)Math.log10(1.0+tf) * Math.log10(10.0/df);
+            qTermsWeight.put(term, weight);
+        }
+	}
+
+    public Map<String, Double> getQTermsWeight() {
+        return this.qTermsWeight;
+    }
 }
