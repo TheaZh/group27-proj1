@@ -18,6 +18,10 @@ public class GoogleSearch {
 	String ENGINE_KEY = "018258045116810257593:z1fmkqqt_di";
     String query = "per se";
 
+    /**
+    * get the search result list for this.query
+    * @return a List of query Result
+    */
 	private List<Result> getItems(){
 		Customsearch customsearch = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
         List<Result> items = null;
@@ -35,14 +39,19 @@ public class GoogleSearch {
         return items;
 	}
 
+    /**
+    * Change Result list into doc string list
+    * @param items result object list
+    * @return doc string list, for one doc
+    */
     public List<String> getDocsStrings(List<Result> items) {
         List<String> docsStrList = new ArrayList<>();
         for(Result result:items) {
             StringBuilder sb = new StringBuilder();
             sb.append(result.getTitle());
             sb.append(" ");
-            sb.append(result.getLink());
-            sb.append(" ");
+            // sb.append(result.getLink());
+            // sb.append(" ");
             sb.append(result.getSnippet());
             docsStrList.add(sb.toString());
         }
@@ -55,9 +64,6 @@ public class GoogleSearch {
         List<String> query = new ArrayList<>();
         query.add("per");
         query.add("se");
-
-        // System.out.println("args len: " + args.length);
-        System.out.println("query is " + Arrays.toString(args));
 
         // args
         if(args.length < 4 && args.length >0) {
@@ -85,21 +91,26 @@ public class GoogleSearch {
 
         Filter filter = new Filter();
         Scanner sc = new Scanner(System.in);
-
+        int round = 0;
         while(true) {
-
+            // start a new iteration
+            System.out.println("-------------------------------");
+            System.out.println("           Round "+ ++round);
+            System.out.println("-------------------------------");
+            System.out.println("Now the query is: " + search.query);
             List<Result> items = search.getItems();
+            // each doc is a string, 10 doc in a list
             List<String> docsStrList = search.getDocsStrings(items);
             List<Doc> docsList = new ArrayList<>();
             List<Boolean> isRelevant = new ArrayList<>();
+            // each doc is a list of string, and is filtered
             List<List<String>> docEffectiveList = new ArrayList<>();
-            filter.clearDfTable();
+            filter.clearDfMap();
 
             for(int i = 0; i < items.size(); i++) {
                 // split and filt stopword
                 String docStr = docsStrList.get(i);
-                List<String> tokens = new ArrayList<>();
-                filter.filterStopwords(tokens, docStr);
+                List<String> tokens = filter.filterStopwords(docStr);
                 docEffectiveList.add(tokens);
 
                 Result result = items.get(i);
@@ -123,11 +134,11 @@ public class GoogleSearch {
             // create Doc Array
             for(int i = 0; i < docEffectiveList.size(); i++) {
                 List<String> docEffective = docEffectiveList.get(i);
-                Doc doc = new Doc(docEffective, filter.getDfTable());
+                Doc doc = new Doc(docEffective);
                 docsList.add(doc);
             }
 
-            // System.out.println(isRelevant.toString());
+            // now we have a List of Doc, and a List of boolean for according relevance
 
             // decide precision
             int num_relevant = 0;
@@ -145,7 +156,7 @@ public class GoogleSearch {
                 break;
             }
 
-            // TODO update the query
+            // TODO update the query using Rocchio
             search.query = "java is good";
         }
 	}

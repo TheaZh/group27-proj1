@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.*;
 
 class Filter{
-	private Set<String> stopwords;
-	private Map<String, Integer> dfMap;
+	public Set<String> stopwords;
+	public Map<String, Integer> dfMap;
 
     /**
     * construct a new Filter, init its stopwords, create empty dfMap.
@@ -55,11 +55,11 @@ class Filter{
 		Pattern pattern = Pattern.compile(format);
 		Matcher matcher = pattern.matcher(str);
 		Set<String> wordSet = new HashSet<String>();
-		while(matcher.find()){
+		while(matcher.find()) {
 			String token = matcher.group();
             token = token.toLowerCase();
 			// not a stopword
-			// if(!stopwords.contains(token)){ // using filter
+			// if(!stopwords.contains(token)){ // TODO using filter
             if(true){ // not using filter
 				//System.out.println(token);
 				tokens.add(token);
@@ -85,6 +85,10 @@ class Filter{
 	public Map<String, Integer> getDfMap(){
 		return this.dfMap;
 	}
+
+    public void clearDfMap() {
+        this.dfMap.clear();
+    }
 
     // debug
 	public static void main(String[] args) {
