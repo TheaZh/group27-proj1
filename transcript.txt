@@ -1,0 +1,545 @@
+*********************************
+			Query 1
+*********************************
+-------------------------------
+           Round 1
+-------------------------------
+Now the query is: per se
+
+===Result 1===
+- Title   : Per Se | Thomas Keller Restaurant Group
+- URL     : https://www.thomaskeller.com/perseny
+- Snippet : Per Se entrance. center. Macadamia nut dipped in chocolate. left. Mini meat filled pastries. right. Per Se Salon. center. Fish and vegetables. right. Oysters and ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 2===
+- Title   : Per se | Define Per se at Dictionary.com
+- URL     : http://www.dictionary.com/browse/per-se
+- Snippet : Per se definition, by, of, for, or in itself; intrinsically: This candidate is not a pacifist per se, but he is in favor of peaceful solutions when practicable. See more.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 3===
+- Title   : Perse | Definition of Perse by Merriam-Webster
+- URL     : https://www.merriam-webster.com/dictionary/perse
+- Snippet : Define perse: of a dark grayish blue resembling indigo — perse in a sentence.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 4===
+- Title   : per se - Wiktionary
+- URL     : https://en.wiktionary.org/wiki/per_se
+- Snippet : Borrowed from Latin per se (“by itself”), from per (“by, through”) and se (“itself, himself, ... Well, that's not correct per se, but the situation is something like that.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 5===
+- Title   : Per se - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Per_se
+- Snippet : Per se may refer to: per se (Latin), a Latin phrase meaning "by itself" or "in itself". Illegal per se, the legal usage in criminal and anti-trust law; Negligence per se, ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 6===
+- Title   : Per Se - 3815 Photos & 1284 Reviews - French - 10 Columbus Cir ...
+- URL     : https://www.yelp.com/biz/per-se-new-york
+- Snippet : 1284 reviews of Per Se "Exceptional food with the utmost attention to presentation and service. AMBIANCE: Classy as fuhk - Beautiful restaurant on the 4 Floor ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 7===
+- Title   : Per Se (restaurant) - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Per_Se_(restaurant)
+- Snippet : Per Se is a New American and French restaurant located on the fourth floor of the Time Warner Center at 10 Columbus Circle in Manhattan in New York City, ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 8===
+- Title   : At Thomas Keller's Per Se, Slips and Stumbles - The New York Times
+- URL     : https://www.nytimes.com/2016/01/13/dining/pete-wells-per-se-review.html
+- Snippet : Jan 12, 2016 ... Such is Per Se's mystique that I briefly wondered if the failure to bring her a new napkin could have been intentional. The restaurant's identity, to ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 9===
+- Title   : per se - Dictionary Definition : Vocabulary.com
+- URL     : https://www.vocabulary.com/dictionary/per%20se
+- Snippet : Per se is the phrase to use when you want to refer to a particular thing on its own. It is not this Latin phrase, per se, that is important, but rather the concept it ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 10===
+- Title   : PER/se London | Design for Thinkers, Doers, Innovators
+- URL     : https://perse.london/
+- Snippet : Product design studio co-founded by twins MK + HK. Creating unique products for unique living, bi-monthly. For Thinkers, Doers, Innovators. www.perse.london.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+
+Precision is 0.4
+
+-------------------------------
+           Round 2
+-------------------------------
+Now the query is: per se restaurant center
+
+
+===Result 1===
+- Title   : Per Se
+- URL     : https://www.thomaskeller.com/new-york-new-york/per-se/restaurant
+- Snippet : Restaurant. Opened in 2004, Per Se is Thomas Keller's acclaimed New York interpretation of The French Laundry in the Time Warner Center at Columbus Circle ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 2===
+- Title   : Per Se Restaurant - New York, NY | OpenTable
+- URL     : https://www.opentable.com/per-se
+- Snippet : Book now at Per Se in New York, explore menu, see photos and read 1958 reviews: "Great meal! The Wagyu was incredible! So many dessert items. The PB&J ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 3===
+- Title   : Per Se | Thomas Keller Restaurant Group
+- URL     : https://www.thomaskeller.com/perseny
+- Snippet : Per Se entrance. center. Macadamia nut dipped in chocolate. left. Mini meat filled pastries. right. Per Se Salon. center. Fish and vegetables. right. Oysters and ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 4===
+- Title   : Per Se (restaurant) - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Per_Se_(restaurant)
+- Snippet : Per Se is a New American and French restaurant located on the fourth floor of the Time Warner Center at 10 Columbus Circle in Manhattan in New York City, ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 5===
+- Title   : Per Se - New York | Restaurant Review - Zagat
+- URL     : https://www.zagat.com/r/per-se-new-york
+- Snippet : Thomas Keller's Time Warner Center “high temple” of French–New American cuisine is “truly an event” given the “fabulous” tasting menu, “unimpeachable” ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 6===
+- Title   : Per Se — NYC — Restaurant Review - The New York Times
+- URL     : http://www.nytimes.com/2011/10/12/dining/reviews/per-se-nyc-restaurant-review.html
+- Snippet : Oct 11, 2011 ... SO this is the best restaurant in New York City: Per Se, in the Time Warner Center, just up the escalator from the mall, a jewel amid the zirconia.
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 7===
+- Title   : Thomas Keller's Per Se - New York Magazine Restaurant Review
+- URL     : http://nymag.com/nymetro/food/reviews/restaurant/9333/
+- Snippet : During the course of one of my long, exhaustively intricate meals at Per Se, Thomas Keller's new restaurant in the Time Warner Center, one of my guests ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 8===
+- Title   : How do I get to Per Se? - New York City Restaurants - Forbes Travel ...
+- URL     : http://www.forbestravelguide.com/new-york-city-new-york/restaurants/per-se/how-do-i-get-to-per-se
+- Snippet : Located in Midtown Manhattan, there are plenty of ways to get to New York's Per Se. You can hail a cab to the Time Warner Center, where Per Se is located, ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 9===
+- Title   : Per Se Is Trying To Lure Millennials With Discounted Meals - Eater NY
+- URL     : https://ny.eater.com/2017/3/7/14844804/per-se-millennials-nyc
+- Snippet : Mar 7, 2017 ... Thomas Keller and the Per Se staff, celebrating under 30 diners in ... French-Californian restaurant at the Time Warner Center has started a ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 10===
+- Title   : Where is Per Se located? - New York City Restaurants - Forbes ...
+- URL     : http://www.forbestravelguide.com/new-york-city-new-york/restaurants/per-se/where-is-per-se-located
+- Snippet : New York's Per Se has a prime location right in Columbus Circle in Midtown ... Circle; the restaurant is located the fourth floor of the Time Warner Center.
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+
+Precision is 1.0
+Precision >= 0.9
+Stop at round 2
+
+*********************************
+			Query 2
+*********************************
+-------------------------------
+           Round 1
+-------------------------------
+Now the query is: brin
+
+===Result 1===
+- Title   : Sergey Brin - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Sergey_Brin
+- Snippet : Sergey Mikhaylovich Brin is a Russian-born American computer scientist and internet entrepreneur. Together with Larry Page, he co-founded Google. Brin is the ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 2===
+- Title   : Brin - definition of brin by The Free Dictionary
+- URL     : http://www.thefreedictionary.com/brin
+- Snippet : Define brin. brin synonyms, brin pronunciation, brin translation, English dictionary definition of brin. n 1. one of two filaments of silk combined by the silkworm to ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 3===
+- Title   : worlds of David Brin
+- URL     : http://www.davidbrin.com/
+- Snippet : The official website of best-selling science fiction writer and futurist DAVID BRIN.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 4===
+- Title   : BRiN - Entrepreneur, Startup & Business Coaching - Android Apps ...
+- URL     : https://play.google.com/store/apps/details?id=io.brin.brin&hl=en
+- Snippet : Are you a business owner, entrepreneur, senior leader, executive or startup? Then this may very well be the best and most useful business App you'll ever own.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 5===
+- Title   : brin - Wiktionary
+- URL     : https://en.wiktionary.org/wiki/brin
+- Snippet : The imported definitions may be significantly out of date, and any more recent senses may be completely missing. (See the entry for brin in Webster's Revised ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 6===
+- Title   : BRiN - The World's First 24/7 Business Advisor, Entrepreneur Coach ...
+- URL     : https://brin.ai/
+- Snippet : Introducing BRiN - Your Personal Business Advisor. Download BRiN today & get instant access to real-time support and hundreds of business education videos.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 7===
+- Title   : Bloomberg Billionaires Index - Sergey Brin
+- URL     : https://www.bloomberg.com/billionaires/profiles/sergey-brin/
+- Snippet : Overview. Brin is president of Alphabet, the holding company that owns Google, the world's largest search-engine operator. He co-founded the Mountain View, ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 8===
+- Title   : brin
+- URL     : http://sites.usd.edu/brin/
+- Snippet : BRIN Project Description: SD BRIN has been funded by the National Center for Research Resources (NIH) since 2001. We have several Cores (proteomics, ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 9===
+- Title   : Brin definition and meaning | Collins English Dictionary
+- URL     : https://www.collinsdictionary.com/us/dictionary/english/brin
+- Snippet : Brin definition: one of two filaments of silk combined by the silkworm to form a strand of silk | Meaning, pronunciation, translations and examples.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 10===
+- Title   : Google Co-Founder Sergey Brin Is Building the World's Biggest ...
+- URL     : https://www.inc.com/minda-zetlin/google-co-founder-sergey-brin-is-building-the-worlds-biggest-aircraft-heres-what.html
+- Snippet : May 28, 2017 ... Last month, rumors surfaced that Google co-founder Sergey Brin was secretly building the world's largest aircraft in gigantic hangar at NASA's ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+
+Precision is 0.3
+
+-------------------------------
+           Round 2
+-------------------------------
+Now the query is: brin sergey building
+Sep 27, 2017 5:43:18 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
+WARNING: Application name is not set. Call Builder#setApplicationName.
+
+===Result 1===
+- Title   : Why Is Sergey Brin Building a Secret Airship? - The Atlantic
+- URL     : https://www.theatlantic.com/technology/archive/2017/04/sergey-brins-zeppelin/524568/
+- Snippet : Apr 27, 2017 ... That appears to be the case for the Google co-founder Sergey Brin, ... Brin is building a huge airship inside of Hangar 2 at the NASA Ames ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 2===
+- Title   : Google Co-Founder Sergey Brin Is Building the World's Biggest ...
+- URL     : https://www.inc.com/minda-zetlin/google-co-founder-sergey-brin-is-building-the-worlds-biggest-aircraft-heres-what.html
+- Snippet : May 28, 2017 ... Last month, rumors surfaced that Google co-founder Sergey Brin was secretly building the world's largest aircraft in gigantic hangar at NASA's ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 3===
+- Title   : Sergey Brin is building the world's biggest aircraft for humanitarian ...
+- URL     : https://www.theverge.com/2017/5/26/15698032/sergey-brin-google-aircraft-humanitarian-missions-family-trips
+- Snippet : May 26, 2017 ... Google co-founder Sergey Brin's secret airship will be used for humanitarian missions, but it will also serve as a giant RV in the sky for his ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 4===
+- Title   : Revealed: Sergey Brin's secret plans to build the world's biggest ...
+- URL     : https://www.theguardian.com/media/2017/may/26/google-sergey-brin-building-largest-aircraft
+- Snippet : May 26, 2017 ... Google co-founder Sergey Brin is building a hi-tech airship in Silicon Valley destined to be the largest aircraft in the world, according to multiple ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 5===
+- Title   : Sergey Brin building humanitarian blimp for lifesaving leisure • The ...
+- URL     : https://www.theregister.co.uk/2017/05/27/sergey_brin_building_blimp/
+- Snippet : May 27, 2017 ... In a few years, Alphabet president and Google cofounder Sergey Brin is expected to have an airship at his disposal for humanitarian missions ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 6===
+- Title   : Google co-founder Sergey Brin is reportedly building a $100 million ...
+- URL     : https://www.washingtonpost.com/news/innovations/wp/2017/05/30/google-co-founder-sergey-brin-is-reportedly-building-a-100-million-air-yacht-to-help-the-poor/
+- Snippet : May 30, 2017 ... Google co-founder Sergey Brin is spending more than $100 million to build the world's largest airship, a blimp with a rigid structure designed to ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 7===
+- Title   : Google co-founder Sergey Brin is building a giant AIRSHIP | Daily ...
+- URL     : http://www.dailymail.co.uk/sciencetech/article-4446864/Google-founder-Sergey-Brin-building-giant-AIRSHIP.html
+- Snippet : Apr 26, 2017 ... Google co-founder Sergey Brin (pictured) has been building a zeppelin-like airship inside Hangar 2 at the Nasa Ames Research Centre in ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 8===
+- Title   : Google co-founder Sergey Brin building $100 million blimp
+- URL     : https://www.cnbc.com/2017/05/26/google-co-founder-sergey-brin-building-100-million-blimp.html
+- Snippet : May 26, 2017 ... Google co-founder Sergey Brin's blimp will be the world's biggest aircraft it's finished, The Guardian reports.
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 9===
+- Title   : Google co-founder Sergey Brin reportedly building $100 million 'air ...
+- URL     : http://www.chicagotribune.com/bluesky/technology/ct-bsi-wp-sergey-brin-air-yacht-20170603-story.html
+- Snippet : Jun 3, 2017 ... Google co-founder Sergey Brin is spending more than $100 million to build the world's largest airship, a blimp with a rigid structure designed to ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 10===
+- Title   : Sergey Brin is secretly building a massive zeppelin in a NASA ...
+- URL     : http://www.businessinsider.com/sergey-brin-secret-blimp-project-2017-4
+- Snippet : Apr 25, 2017 ... Google cofounder Sergey Brin has a secret blimp under construction in a hangar at the NASA Ames Research Center.
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+
+Precision is 1.0
+Precision >= 0.9
+Stop at round 2
+
+*********************************
+			Query 3
+*********************************
+-------------------------------
+           Round 1
+-------------------------------
+Now the query is: jaguar
+
+===Result 1===
+- Title   : Jaguar USA: Jaguar Sedans, SUVs & Sports Cars - Official Site
+- URL     : https://www.jaguarusa.com/index.html
+- Snippet : The official home of Jaguar USA. Explore our luxury sedans, SUVs and sports cars. Build Yours, Schedule a Test Drive or Find a Dealer Near You.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 2===
+- Title   : Jaguar - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Jaguar
+- Snippet : The jaguar (Panthera onca) is a big cat, a feline in the Panthera genus, and is the only extant Panthera species native to the Americas. The jaguar is the ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 3===
+- Title   : Build Yours | Jaguar USA
+- URL     : https://www.jaguarusa.com/build-yours/index.html
+- Snippet : Build your Jaguar sport luxury vehicle today. Choose from XE, XF, F-PACE or other models designed to fit your lifestyle and personal taste.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 4===
+- Title   : Jaguar Cars - Wikipedia
+- URL     : https://en.wikipedia.org/wiki/Jaguar_Cars
+- Snippet : Jaguar is the luxury vehicle brand of Jaguar Land Rover, a British multinational car manufacturer with its headquarters in Whitley, Coventry, England, owned by ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 5===
+- Title   : Jacksonville Jaguars, Official Site of the Jacksonville Jaguars
+- URL     : http://www.jaguars.com/
+- Snippet : Jaguars safety Barry Church visits a local elementary school along with the Dairy Council of Florida and Fuel Up to Play 60 to teach good health values.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 6===
+- Title   : Jaguar | Basic Facts About Jaguars | Defenders of Wildlife
+- URL     : http://www.defenders.org/jaguar/basic-facts
+- Snippet : The jaguar is the largest cat in the Americas. The jaguar has a compact body, a broad head and powerful jaws. Its coat is normally yellow and tan, but the color ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 7===
+- Title   : Certified Pre-Owned Program Benefits | Jaguar USA
+- URL     : http://www.jaguarusa.com/certified-preowned/index.html
+- Snippet : Learn about the benefits of the Jaguar Certified Pre-Owned Vehicle Program, including a rigorous inspection and warranty information.
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 8===
+- Title   : Jacksonville Jaguars Team Page at NFL.com
+- URL     : http://www.nfl.com/teams/jacksonvillejaguars/profile?team=JAX
+- Snippet : Even though the Jacksonville Jaguars were completely dominating the Baltimore Ravens, the Jags decided to run a fake punt late in the game. John Harbaugh ...
+
+Is it relevant? (Yes/No): no
+This is NOT relevant.
+
+===Result 9===
+- Title   : Jaguar - YouTube
+- URL     : https://www.youtube.com/user/JaguarCarsLimited
+- Snippet : Since the first Jaguar car was produced in 1935 we have pushed the boundaries of what is possible. We've always believed that a car is the closest thing you ...
+
+Is it relevant? (Yes/No): no 
+This is NOT relevant.
+
+===Result 10===
+- Title   : Jaguar | Definition of Jaguar by Merriam-Webster
+- URL     : https://www.merriam-webster.com/dictionary/jaguar
+- Snippet : Define jaguar: a large cat (Panthera onca) chiefly of Central and South America that is larger and stockier than the leopard and is brownish yellow…
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+
+Precision is 0.3
+
+-------------------------------
+           Round 2
+-------------------------------
+Now the query is: jaguar panthera defenders
+
+===Result 1===
+- Title   : Jaguar | Basic Facts About Jaguars | Defenders of Wildlife
+- URL     : http://www.defenders.org/jaguar/basic-facts
+- Snippet : The jaguar is the largest cat in the Americas. The jaguar has a compact body, a broad head and powerful jaws. Its coat is normally yellow and tan, but the color ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 2===
+- Title   : Would You Like to See Jaguars Back in the Lower 48? Defenders of ...
+- URL     : https://www.environews.tv/032117-defenders-wildlife-publishes-u-s-jaguar-recovery-plan-counter-lacking-usfws-strategy/
+- Snippet : Mar 21, 2017 ... The two migrants, well documented by wildlife officials, were male jaguars (Panthera onca). Since 1996, seven individual jaguars are known to ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 3===
+- Title   : Jaguar | Protecting Critical Habitat for Jaguars | Defenders of Wildlife
+- URL     : http://www.defenders.org/jaguar/protecting-critical-habitat-jaguars
+- Snippet : Defenders is protecting habitat for jaguars in a vital reserve in Mexico. ... Defenders played a key role in helping establish the Northern Jaguar Reserve in ... Florida panthers, mountain lions, jaguars that become used to human presence can ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 4===
+- Title   : Jaguar (Panthera Onca) - Animals - A-Z Animals
+- URL     : https://a-z-animals.com/animals/jaguar/
+- Snippet : Feb 16, 2017 ... A potrait of a Jaguar (Panthera onca) at the Milwaukee County Zoological Gardens A Jaguar lying down. A Jaguar takes a yawn at the Toronto ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 5===
+- Title   : Jaguar | Threats to Jaguars | Defenders of Wildlife
+- URL     : http://www.defenders.org/jaguar/threats
+- Snippet : As humans continue to encroach on the jaguar's home, these opportunistic eaters will ... In 2003, Defenders of Wildlife filed its first of several lawsuits against the FWS, ... Florida panthers, mountain lions, jaguars that become used to human ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 6===
+- Title   : Adopt a Jaguar - Wildlife Adoption and Gift Center
+- URL     : https://secure.defenders.org/site/SPageServer?pagename=wagc_jaguar
+- Snippet : Adopt a jaguar, the perfect gift! ... Your adoption helps Defenders' work to ensure jaguar habitat remains healthy and intact, and provides vital support for our ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 7===
+- Title   : Breeding cows that can defend themselves against jaguars
+- URL     : https://www.economist.com/news/americas/21717415-if-big-cats-dont-kill-livestock-farmers-wont-shoot-them-breeding-cows-can-defend
+- Snippet : Feb 23, 2017 ... Panthera, a charity that manages “corridors” for jaguars that stretch ... Docile with humans, they are fierce defenders of territory and their young.
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 8===
+- Title   : Jaguar Corridor Initiative
+- URL     : https://www.panthera.org/initiative/jaguar-corridor-initiative
+- Snippet : Panthera's Jaguar Corridor Initiative is the only conservation program that seeks to protect jaguars across their entire six million km2 range. In partnership with ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 9===
+- Title   : Evidence of Resident Jaguars (Panthera onca) in the Southwestern ...
+- URL     : http://www.bioone.org/doi/abs/10.1644/07-MAMM-F-268.1
+- Snippet : Jaguars (Panthera onca) remain virtually unstudied in the desert environments at the northern extent of their range. .... Defenders of Wildlife, Washington, D.C..
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+===Result 10===
+- Title   : Jaguar
+- URL     : https://www.panthera.org/cat/jaguar
+- Snippet : The jaguar is the largest wild cat in the Western Hemisphere. Although jaguar populations are abundant in some areas, many are threatened by illegal hunting, ...
+
+Is it relevant? (Yes/No): yes
+This is relevant.
+
+
+Precision is 1.0
+Precision >= 0.9
+Stop at round 2
