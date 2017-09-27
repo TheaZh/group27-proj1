@@ -59,7 +59,8 @@ class Filter{
 			String token = matcher.group();
             token = token.toLowerCase();
 			// not a stopword
-			if(!stopwords.contains(token)){
+			// if(!stopwords.contains(token)){ // using filter
+            if(true){ // not using filter
 				//System.out.println(token);
 				tokens.add(token);
 				/*
