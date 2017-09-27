@@ -1,13 +1,34 @@
 import java.util.*;
 
-public class Doc{
-    List<String> docStrings;        // all the strings in this doc
-    List<String> terms;             // all the terms in all the docs
-    Map<String, Integer> tfMap;   // termfrequncy table
-    List<Double> d;                 // doc vector for this doc
-    Map<String, Integer> dfMap;
+class Doc{
+    Map<String, Integer> tfMap;     // termfrequncy table
+    Map<String, Integer> dfMap;     // document frequency for each term
+    Map<String, Double> termsWeight;// weight for each term in this doc
 
+    // test
+    public static void main(String[] args) {
+        List<String> strs = new ArrayList<>(Arrays.asList("java", "blue", "cafe", "coffee", "coffee", "java", "java"));
+        Map<String, Integer> df = new HashMap<>();
+        df.put("java", 10); df.put("cafe", 5); df.put("coffee", 7);
+        df.put("blue", 9); df.put("red", 6);
 
+        Doc testDoc = new Doc(strs);
+        // print the term frequency table
+        System.out.println("term frequency: " + testDoc.tfMap.toString());
+
+        testDoc.computeTermsWeight(df);
+        // print the document frequency table
+        System.out.println("doc frequency: " + testDoc.dfMap.toString());
+        // print doc vector
+        System.out.println("term weight: " + testDoc.termsWeight.toString());
+    }
+
+    /**
+    * This construction method creates a new Doc object
+    * and computes its term -> frequency Map.
+    * @param documentStringList The list of document effective strings.
+    * @return a new Doc object.
+    */
     public Doc(List<String> documentStringList){
         tfMap = new HashMap<String, Integer>();
         for(String term : documentStringList){
@@ -16,76 +37,33 @@ public class Doc{
             }
             tfMap.put(term, tfMap.get(term)+1);
         }
+        termsWeight = new HashMap<String, Double>();
     }
 
-
-
-
-
-
     /**
-    * This method returns the square of num.
-    * This is a multiline description. You can use
-    * as many lines as you like.
+    * This method computes the weight for each term in this doc.
+    * after calling this method, you can refer this.termsWeight as its Doc vector
     * @param documentString The list of document effective strings.
-    * @param df The map: term -> document frequency.
-    * @return num squared.
+    * @param dfMap The map: term -> document frequency.
     */
-    /*
-	public Doc(List<String> documentStringList, Map<String, Integer> df){
-        this.docStrings = documentStringList;
-        this.terms = this.getAllTerms(df);
-
-        // count the term frequency
-        this.tfMap = new HashMap<String, Integer>();
-        for(String each : this.terms) {
-            this.tfMap.put(each, 0);
-        }
-        for(String word : this.docStrings) {
-            this.tfMap.put(word, this.tfMap.get(word) + 1);
-        }
-
-        this.d = this.getDocVector();
-        System.out.println(this.d.toString());
-	}
-
-     */
-    public void computeTermsWeight(Map<String, Double> termsWeight, Map<String, Integer> dfMap){
+    public void computeTermsWeight(Map<String, Integer> df){
+        dfMap = df;
         for(Map.Entry<String, Integer> entry : tfMap.entrySet()){
             String term = entry.getKey();
             Integer fre = entry.getValue();
             if(!termsWeight.containsKey(term)){
                 termsWeight.put(term, 0.0);
             }
-            double weight =(double)Math.log10(1.0+tfMap.get(term)) * Math.log10(10/dfMap.get(term));
+
+            double weight =(double)Math.log10(1.0+fre) * Math.log10(10.0/dfMap.get(term));
             termsWeight.put(term, termsWeight.get(term)+weight);
         }
     }
 
-    /*
-    // get sorted terms in all docs
-    private List<String> getAllTerms(Map<String, Integer> df) {
-        List<String> termList = new ArrayList<>(df.keySet());
-        Collections.sort(termList);
-        return termList;
-    }
-
-    // get the document vector
-    public List<Double> getDocVector() {
-        List<Double> vector = new ArrayList<>();
-
-        for(int i=0; i<terms.size(); i++) {
-            String term = terms.get(i);
-            vector.add(Math.log10(1+tfMap.get(term)) * Math.log10(10/dfMap.get(term)));
-        }
-        return vector;
-    }
-    */
-
-    /*
+    /**
      * @return  return the term-frequency map of this doc
      */
-    public Map<String, Integer> getTFMap(){
+    public Map<String, Integer> getTfMap(){
         return this.tfMap;
     }
 
