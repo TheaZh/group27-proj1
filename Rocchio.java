@@ -13,13 +13,27 @@ class Rocchio{
 	private final double BETA = 0.75;
 	private final double GAMMA = 0.15;
 
+    // debug
 	public static void main(String[] args) {
-		Map<String, Integer> dfMap = new HashMap<String, Integer>();
-		dfMap.put("mask",2);dfMap.put("table",2);dfMap.put("cost",1);dfMap.put("ask",4);
-        Query query = new Query("mask", dfMap);
-		// Rocchio test = new Rocchio(dfMap);
-		// test.computeQ(query);
+        String pass1 = "BlueJ. A free Java Development Environment designed for beginners, used by millions worldwide. Find out more... One of my favourite IDEs out there is BlueJ";
+        String pass2 = "What are the hours of the Blue Java Coffee Bar in Butler Library? Question: What are the hours of the Blue Java Coffee Bar in Butler Library? Answer: See the ...";
 
+        Filter filter = new Filter();
+        List<String> effective1 = filter.filterStopwords(pass1);
+        List<String> effective2 = filter.filterStopwords(pass2);
+        Doc doc1 = new Doc(effective1);
+        doc1.computeTermsWeight(filter.getDfMap());
+        Doc doc2 = new Doc(effective2);
+        doc2.computeTermsWeight(filter.getDfMap());
+        List<Doc> relDocList = new ArrayList<>();
+        relDocList.add(doc1);
+        List<Doc> nonRelList = new ArrayList<>();
+        nonRelList.add(doc2);
+
+        String queryStr = "blue java";
+        Query q = new Query(queryStr, filter.getDfMap());
+        Rocchio algo = new Rocchio(q, filter.getDfMap(), relDocList, nonRelList);
+        System.out.println("The new qeury is: " + algo.getNewQueryStr());
 	}
 
     /**
@@ -177,16 +191,16 @@ class Rocchio{
         }
 
         Collections.sort(pairList, new Comparator<Pair>() {
-            @override
+            @Override
             public int compare(Pair a, Pair b) {
-                return a.value - b.value;
+                return (a.v - b.v) > 0 ? 1 : -1;
             }
         });
 
         int cnt = 0;
         for(Pair pair : pairList) {
-            if(!oldQueryStrsSet.containsKey(pair.k)) {
-                sb.append(pair.v + " ");
+            if(!oldQueryStrsSet.contains(pair.k)) {
+                sb.append(pair.k + " ");
                 cnt++;
                 if(cnt >= 2) break;
             }

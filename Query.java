@@ -34,7 +34,7 @@ class Query{
         System.out.println("This query vector is: " + query.getQTermsWeight().toString());
 	}
 
-	public Set<String> getTermList(){
+	public List<String> getTermList(){
 		return this.searchWordList;
 	}
 
