@@ -2,13 +2,15 @@ import java.util.*;
 
 class Query{
 
-	private Set<String> searchWords;
+    public List<String> searchWordList;
+	public Set<String> searchWords;
     private Map<String, Integer> dfMap;
     public Map<String, Double> qTermsWeight;
     /**
     * Constructs a query object
     */
 	public Query(String searchWord, Map<String, Integer> dfMapIn) {
+        searchWordList = new ArrayList<String>();
 		searchWords = new HashSet<String>();
         dfMap = dfMapIn;
         qTermsWeight = new HashMap<String, Double>();
@@ -16,6 +18,7 @@ class Query{
 		String[] keywords = searchWord.split("\\s+");
 		for(int i = 0; i<keywords.length; i++){
 			searchWords.add(keywords[i]);
+            searchWordList.add(keywords[i]);
 		}
         computeQTermsWeight();
 	}
@@ -32,7 +35,7 @@ class Query{
 	}
 
 	public Set<String> getTermList(){
-		return searchWords;
+		return this.searchWordList;
 	}
 
 	public void computeQTermsWeight() {

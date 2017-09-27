@@ -3,7 +3,7 @@ import java.util.*;
 class Doc{
     Map<String, Integer> tfMap;     // termfrequncy table
     Map<String, Integer> dfMap;     // document frequency for each term
-    Map<String, Double> termsWeight;// weight for each term in this doc
+    public Map<String, Double> termsWeight;// weight for each term in this doc
 
 
     /**
