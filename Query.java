@@ -20,6 +20,7 @@ class Query{
 			searchWords.add(keywords[i]);
             searchWordList.add(keywords[i]);
 		}
+
         computeQTermsWeight();
 	}
 
@@ -39,6 +40,7 @@ class Query{
 	}
 
 	public void computeQTermsWeight() {
+        System.out.println("in computeQTermsWeight: "+this.searchWords.toString());
         for(String term : this.searchWords) {
             int df = dfMap.get(term);
 			int tf = 1;  // in q query each word frequency should be 1

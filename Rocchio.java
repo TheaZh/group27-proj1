@@ -156,16 +156,18 @@ class Rocchio{
         // add these to vector
 		for(String term : relevantTermsWeight.keySet()) {//!!!!!!!!!!!!!!!!
 			double relevant = BETA * relevantTermsWeight.get(term) / relNom;
-			double non_relevant = nonrelevantTermsWeight.containsKey(term) ? (GAMMA * nonrelevantTermsWeight.get(term)/nonRelNom): 0.0;
-
 			if(!vector.containsKey(term)){
 				vector.put(term, 0.0);
 			}
-
-			double weight = relevant - non_relevant;
-			vector.put(term, vector.get(term) + weight);
+			vector.put(term, vector.get(term) + relevant);
 		}
-
+        for(String term : nonrelevantTermsWeight.keySet()) {//!!!!!!!!!!!!!!!!
+			double non_relevant = (GAMMA * nonrelevantTermsWeight.get(term)/nonRelNom);
+			if(!vector.containsKey(term)){
+				vector.put(term, 0.0);
+			}
+			vector.put(term, vector.get(term) - non_relevant);
+		}
         // now vector is the new q_i
 	}
 
@@ -194,11 +196,16 @@ class Rocchio{
         Collections.sort(pairList, new Comparator<Pair>() {
             @Override
             public int compare(Pair a, Pair b) {
-                if(a.v == b.v) return 0;
-                return (a.v - b.v) > 0 ? 1 : -1;
+                if(a.v < b.v) return 1;
+                if(a.v > b.v) return -1;
+                return 0;
             }
         });
 
+        /*
+        for(int i = 0; i < 10 && i < pairList.size(); i++)
+            System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
+        */
         int cnt = 0;
         for(Pair pair : pairList) {
             if(!oldQueryStrsSet.contains(pair.k)) {

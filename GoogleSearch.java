@@ -46,8 +46,8 @@ public class GoogleSearch {
             StringBuilder sb = new StringBuilder();
             sb.append(result.getTitle());
             sb.append(" ");
-            // sb.append(result.getLink());
-            // sb.append(" ");
+            sb.append(result.getLink());
+            sb.append(" ");
             sb.append(result.getSnippet());
             docsStrList.add(sb.toString());
         }
@@ -76,11 +76,11 @@ public class GoogleSearch {
         if(args.length >= 4) {
             search.API_KEY = args[0];
             search.ENGINE_KEY = args[1];
+            precision = Float.parseFloat(args[2]);
             query.clear();
-            for(int i = 4; i < args.length; i++) query.add(args[i]);
-            System.out.println(query.toString());
+            for(int i = 3; i < args.length; i++) query.add(args[i]);
             StringBuilder querySb = new StringBuilder();
-            for(String str : query) querySb.append(query + " ");
+            for(String str : query) querySb.append(str + " ");
             querySb.setLength(querySb.length() - 1);
             search.query = querySb.toString();
         }
@@ -154,17 +154,27 @@ public class GoogleSearch {
             System.out.println("precision is " + this_precision);
             if(this_precision >= precision) {
                 System.out.println("precision >= " + precision);
+                System.out.println("Stop at round " + round);
                 break;
             }
             else if(this_precision <= 0) {
                 System.out.println("precision = 0");
+                System.out.println("Stop at round " + round);
                 break;
+            }
+
+            System.out.println("DF Map: "+ filter.getDfMap());
+            for(Doc doc : docsList) {
+                System.out.println("TF Map: " + doc.tfMap.toString());
+                System.out.println("d vector: " + doc.termsWeight.toString());
             }
 
             // TODO update the query using Rocchio
             // search.query = "java is good";
             Query q = new Query(search.query, filter.getDfMap());
+            // System.out.println("q vector: " + q.qTermsWeight.toString());
             Rocchio algo = new Rocchio(q, filter.getDfMap(), relDocList, nonRelList);
+            // System.out.println("new q: " + algo.vector.toString());
             search.query = algo.getNewQueryStr();
         }
 	}
