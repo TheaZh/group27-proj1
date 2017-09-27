@@ -5,23 +5,6 @@ class Doc{
     Map<String, Integer> dfMap;     // document frequency for each term
     Map<String, Double> termsWeight;// weight for each term in this doc
 
-    // test
-    public static void main(String[] args) {
-        List<String> strs = new ArrayList<>(Arrays.asList("java", "blue", "cafe", "coffee", "coffee", "java", "java"));
-        Map<String, Integer> df = new HashMap<>();
-        df.put("java", 10); df.put("cafe", 5); df.put("coffee", 7);
-        df.put("blue", 9); df.put("red", 6);
-
-        Doc testDoc = new Doc(strs);
-        // print the term frequency table
-        System.out.println("term frequency: " + testDoc.tfMap.toString());
-
-        testDoc.computeTermsWeight(df);
-        // print the document frequency table
-        System.out.println("doc frequency: " + testDoc.dfMap.toString());
-        // print doc vector
-        System.out.println("term weight: " + testDoc.termsWeight.toString());
-    }
 
     /**
     * This construction method creates a new Doc object
@@ -66,5 +49,24 @@ class Doc{
     public Map<String, Integer> getTfMap(){
         return this.tfMap;
     }
+
+    // test
+    public static void main(String[] args) {
+        List<String> strs = new ArrayList<>(Arrays.asList("java", "blue", "cafe", "coffee", "coffee", "java", "java"));
+        Map<String, Integer> df = new HashMap<>();
+        df.put("java", 10); df.put("cafe", 5); df.put("coffee", 7);
+        df.put("blue", 9); df.put("red", 6);
+
+        Doc testDoc = new Doc(strs);
+        // print the term frequency table
+        System.out.println("term frequency: " + testDoc.tfMap.toString());
+
+        testDoc.computeTermsWeight(df);
+        // print the document frequency table
+        System.out.println("doc frequency: " + testDoc.dfMap.toString());
+        // print doc vector
+        System.out.println("term weight: " + testDoc.termsWeight.toString());
+    }
+
 
 }

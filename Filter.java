@@ -9,27 +9,18 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.util.*;
 
-public class Filter{
+class Filter{
 	private Set<String> stopwords;
 	private Map<String, Integer> dfMap;
-	//private HashSet<String> wordSet;
-	
-	public Filter(Map<String, Integer> df){
-		stopwords = new HashSet<String>();
-		this.dfMap = df;
+
+    /**
+    * construct a new Filter, init its stopwords, create empty dfMap.
+    */
+	public Filter(){
+		this.stopwords = new HashSet<String>();
+		this.dfMap = new HashMap<String, Integer>();
 		getStopwords();
 	}
-
-	// debug
-	/*
-	public static void main(String[] args) {
-		Filter filter = new Filter();
-		//Set<String> t = filter.getStopwords();
-		List<String> list = new ArrayList<String>();
-		filter.filterStopwords(list, "a book-about of Java 3.33");
-		System.out.println(list.toString());
-	}
-	*/
 
 	// read stopword file, and create a stopword set
 	private void getStopwords(){
@@ -54,8 +45,10 @@ public class Filter{
 		}
 	}
 
-	// add efficient terms in token list, filter those stopwords
-	// return tokens --> a efficient word list of this doc
+    /**
+	* add efficient terms in token list, filter those stopwords
+	* @return tokens --> a efficient word list of this doc
+    */
 	public List<String> filterStopwords(String str){
 		List<String> tokens = new ArrayList<String>();
 		String format = "\\d+.\\d+|\\w+|\\w+-w+";
@@ -64,13 +57,14 @@ public class Filter{
 		Set<String> wordSet = new HashSet<String>();
 		while(matcher.find()){
 			String token = matcher.group();
+            token = token.toLowerCase();
 			// not a stopword
 			if(!stopwords.contains(token)){
 				//System.out.println(token);
-				tokens.add(token); 
+				tokens.add(token);
 				/*
 				 * if it's the first time that the term appears in this doc
-				 * the number of doc that word appears in ++ 
+				 * the number of doc that word appears in ++
 				 */
 				if(wordSet.add(token)){
 					if(!dfMap.containsKey(token)){
@@ -83,11 +77,26 @@ public class Filter{
 		return tokens;
 	}
 
-	/*
-	 * @return a table : <String, Integer> 
+	/**
+	 * @return a table : <String, Integer>
 	 * the number of docs that a word appears in
 	 */
-	public Map<String, Integer> getDFMap(){
+	public Map<String, Integer> getDfMap(){
 		return this.dfMap;
+	}
+
+    // debug
+	public static void main(String[] args) {
+		Filter filter = new Filter();
+
+		List<String> list;
+
+		list = filter.filterStopwords("Per Se entrance. center. Macadamia nut dipped in chocolate. left. Mini meat filled pastries. right. Per Se Salon. center. Fish and vegetables. right. Oysters and ...");
+		System.out.println(list.toString());
+        System.out.println(filter.getDfMap().toString());
+
+        list = filter.filterStopwords("Daily Menus Two tasting menus are offered daily: a nine-course chef's tasting menu as well as a nine-course vegetable tasting menu. No single ingredient is ...");
+		System.out.println(list.toString());
+        System.out.println(filter.getDfMap().toString());
 	}
 }
