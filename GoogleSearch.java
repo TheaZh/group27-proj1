@@ -10,30 +10,30 @@ import java.util.*;
 
 public class GoogleSearch {
 
-	String API_KEY = "AIzaSyBpMdM3c6XYISNPICI0qEdEECtRo5gemqA";
-	String ENGINE_KEY = "018258045116810257593:z1fmkqqt_di";
+    String API_KEY = "AIzaSyBpMdM3c6XYISNPICI0qEdEECtRo5gemqA";
+    String ENGINE_KEY = "018258045116810257593:z1fmkqqt_di";
     String query = "per se";
 
     /**
     * get the search result list for this.query
     * @return a List of query Result
     */
-	private List<Result> getItems(){
-		Customsearch customsearch = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
+    private List<Result> getItems(){
+        Customsearch customsearch = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
         List<Result> items = null;
-	    try {
-	        com.google.api.services.customsearch.Customsearch.Cse.List list = customsearch.cse().list(query);
-	        list.setKey(API_KEY);
-	        list.setCx(ENGINE_KEY);
-	        Search results = list.execute();
-	        items = results.getItems();
+        try {
+            com.google.api.services.customsearch.Customsearch.Cse.List list = customsearch.cse().list(query);
+            list.setKey(API_KEY);
+            list.setCx(ENGINE_KEY);
+            Search results = list.execute();
+            items = results.getItems();
 
-	    } catch (IOException e) {
-	        // TODO Auto-generated catch block
-	        e.printStackTrace();
-	    }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         return items;
-	}
+    }
 
     /**
     * Change Result list into doc string list
@@ -72,7 +72,7 @@ public class GoogleSearch {
             System.exit(0);
         }
 
-		GoogleSearch search = new GoogleSearch();
+        GoogleSearch search = new GoogleSearch();
         if(args.length >= 4) {
             search.API_KEY = args[0];
             search.ENGINE_KEY = args[1];
@@ -90,6 +90,7 @@ public class GoogleSearch {
         int round = 0;
         while(true) {
             // start a new iteration
+            System.out.println("");
             System.out.println("-------------------------------");
             System.out.println("           Round "+ ++round);
             System.out.println("-------------------------------");
@@ -112,21 +113,23 @@ public class GoogleSearch {
                 docEffectiveList.add(tokens);
 
                 Result result = items.get(i);
-                System.out.println("Title: "+ result.getTitle());
-	            System.out.println("URL: " + result.getLink());
-	            System.out.println("snippet: " + result.getSnippet());
-	            System.out.println("----------------------");
-
-                System.out.println("Is it relevant? Enter 'y' for yes, 'n' for no.");
+                System.out.println("");
+                System.out.println("===Result " + (i+1) + "===" );
+                System.out.println("- Title   : "+ result.getTitle());
+                System.out.println("- URL     : " + result.getLink());
+                System.out.println("- Snippet : " + result.getSnippet());
+                System.out.println("");
+                System.out.print("Is it relevant? (Yes/No): ");
                 String feedback = sc.nextLine();
-                if(feedback.equals("y")) {
-                    System.out.println("this is relevant.");
+                if(feedback.toLowerCase().equals("yes")) {
+                    System.out.println("This is relevant.");
                     isRelevant.add(true);
                 }
                 else { // "n"
-                    System.out.println("this is NOT relevant.");
+                    System.out.println("This is NOT relevant.");
                     isRelevant.add(false);
                 }
+                //System.out.println("------------");
             }
 
             // create Doc Array
@@ -151,27 +154,28 @@ public class GoogleSearch {
                 }
             }
             float this_precision = (float)relDocList.size() / (float) docsList.size();
-            System.out.println("precision is " + this_precision);
+            System.out.println("");
+            System.out.println("");
+            System.out.println("Precision is " + this_precision);
             if(this_precision >= precision) {
-                System.out.println("precision >= " + precision);
+                System.out.println("Precision >= " + precision);
                 System.out.println("Stop at round " + round);
                 break;
             }
             else if(this_precision <= 0) {
-                System.out.println("precision = 0");
-                System.out.println("Stop at round " + round);
+                System.out.println("Precision = 0");
+                System.out.println("---Stop at round " + round +"---");
                 break;
             }
 
-            // System.out.println("DF Map: "+ filter.getDfMap());
             /*
+            System.out.println("DF Map: "+ filter.getDfMap());
             for(Doc doc : docsList) {
                 System.out.println("TF Map: " + doc.tfMap.toString());
                 System.out.println("d vector: " + doc.termsWeight.toString());
             }
             */
-
-            // update the query using Rocchio
+            // TODO update the query using Rocchio
             // search.query = "java is good";
             Query q = new Query(search.query, filter.getDfMap());
             // System.out.println("q vector: " + q.qTermsWeight.toString());
@@ -179,5 +183,5 @@ public class GoogleSearch {
             // System.out.println("new q: " + algo.vector.toString());
             search.query = algo.getNewQueryStr();
         }
-	}
+    }
 }
