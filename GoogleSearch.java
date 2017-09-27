@@ -163,13 +163,15 @@ public class GoogleSearch {
                 break;
             }
 
-            System.out.println("DF Map: "+ filter.getDfMap());
+            // System.out.println("DF Map: "+ filter.getDfMap());
+            /*
             for(Doc doc : docsList) {
                 System.out.println("TF Map: " + doc.tfMap.toString());
                 System.out.println("d vector: " + doc.termsWeight.toString());
             }
+            */
 
-            // TODO update the query using Rocchio
+            // update the query using Rocchio
             // search.query = "java is good";
             Query q = new Query(search.query, filter.getDfMap());
             // System.out.println("q vector: " + q.qTermsWeight.toString());
