@@ -5,11 +5,7 @@ import com.google.api.services.customsearch.model.Result;
 import com.google.api.services.customsearch.model.Search;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 
 public class GoogleSearch {
@@ -110,7 +106,9 @@ public class GoogleSearch {
             for(int i = 0; i < items.size(); i++) {
                 // split and filt stopword
                 String docStr = docsStrList.get(i);
-                List<String> tokens = filter.filterStopwords(docStr);
+                Set<String> searchWordsSet = new HashSet<>();
+                for(String str : search.query.split("\\s+")) searchWordsSet.add(str);
+                List<String> tokens = filter.filterStopwords(docStr, searchWordsSet);
                 docEffectiveList.add(tokens);
 
                 Result result = items.get(i);
@@ -163,11 +161,11 @@ public class GoogleSearch {
                 break;
             }
 
-            // Rocchio algo = new Rocchio(filter.getDfMap(), relDocList, nonRelList);
-
-
             // TODO update the query using Rocchio
-            search.query = "java is good";
+            // search.query = "java is good";
+            Query q = new Query(search.query, filter.getDfMap());
+            Rocchio algo = new Rocchio(q, filter.getDfMap(), relDocList, nonRelList);
+            search.query = algo.getNewQueryStr();
         }
 	}
 }

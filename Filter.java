@@ -49,7 +49,7 @@ class Filter{
 	* add efficient terms in token list, filter those stopwords
 	* @return tokens --> a efficient word list of this doc
     */
-	public List<String> filterStopwords(String str){
+	public List<String> filterStopwords(String str, Set<String> searchWordsSet){
 		List<String> tokens = new ArrayList<String>();
 		String format = "\\d+.\\d+|\\w+|\\w+-w+";
 		Pattern pattern = Pattern.compile(format);
@@ -59,8 +59,8 @@ class Filter{
 			String token = matcher.group();
             token = token.toLowerCase();
 			// not a stopword
-			// if(!stopwords.contains(token)){ // TODO using filter
-            if(true){ // not using filter
+			if(!stopwords.contains(token) || searchWordsSet.contains(token)){ // using filter
+            // if(true){ // not using filter
 				//System.out.println(token);
 				tokens.add(token);
 				/*
@@ -96,11 +96,12 @@ class Filter{
 
 		List<String> list;
 
-		list = filter.filterStopwords("Per Se entrance. center. Macadamia nut dipped in chocolate. left. Mini meat filled pastries. right. Per Se Salon. center. Fish and vegetables. right. Oysters and ...");
+        Set<String> searchWordsSet = new HashSet<>(Arrays.asList("per", "se"));
+		list = filter.filterStopwords("Per Se entrance. center. Macadamia nut dipped in chocolate. left. Mini meat filled pastries. right. Per Se Salon. center. Fish and vegetables. right. Oysters and ...", searchWordsSet);
 		System.out.println(list.toString());
         System.out.println(filter.getDfMap().toString());
 
-        list = filter.filterStopwords("Daily Menus Two tasting menus are offered daily: a nine-course chef's tasting menu as well as a nine-course vegetable tasting menu. No single ingredient is ...");
+        list = filter.filterStopwords("Daily Menus Two tasting menus are offered daily: a nine-course chef's tasting menu as well as a nine-course vegetable tasting menu. No single ingredient is ...", searchWordsSet);
 		System.out.println(list.toString());
         System.out.println(filter.getDfMap().toString());
 	}

@@ -19,8 +19,9 @@ class Rocchio{
         String pass2 = "What are the hours of the Blue Java Coffee Bar in Butler Library? Question: What are the hours of the Blue Java Coffee Bar in Butler Library? Answer: See the ...";
 
         Filter filter = new Filter();
-        List<String> effective1 = filter.filterStopwords(pass1);
-        List<String> effective2 = filter.filterStopwords(pass2);
+        Set<String> searchWordsSet = new HashSet<>(Arrays.asList("blue", "java"));
+        List<String> effective1 = filter.filterStopwords(pass1, searchWordsSet);
+        List<String> effective2 = filter.filterStopwords(pass2, searchWordsSet);
         Doc doc1 = new Doc(effective1);
         doc1.computeTermsWeight(filter.getDfMap());
         Doc doc2 = new Doc(effective2);
@@ -193,6 +194,7 @@ class Rocchio{
         Collections.sort(pairList, new Comparator<Pair>() {
             @Override
             public int compare(Pair a, Pair b) {
+                if(a.v == b.v) return 0;
                 return (a.v - b.v) > 0 ? 1 : -1;
             }
         });
