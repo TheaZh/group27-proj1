@@ -124,7 +124,7 @@ class Rocchio{
         Set<String> oldQueryStrsSet = this.query.searchWords;
 
         StringBuilder sb = new StringBuilder();
-        for(String str : oldQueryStrsList) sb.append(str + " ");
+        //for(String str : oldQueryStrsList) sb.append(str + " ");
 
         // sort vector by weights
         List<Pair> pairList = new ArrayList<>();
