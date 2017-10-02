@@ -46,8 +46,6 @@ public class GoogleSearch {
             StringBuilder sb = new StringBuilder();
             sb.append(result.getTitle());
             sb.append(" ");
-            sb.append(result.getLink());
-            sb.append(" ");
             sb.append(result.getSnippet());
             docsStrList.add(sb.toString());
         }
