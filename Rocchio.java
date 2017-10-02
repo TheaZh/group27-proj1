@@ -55,67 +55,6 @@ class Rocchio{
         computeAllWeight();
 	}
 
-	/**
-	 * compute the Q vector
-	 */
-    /*
-	private void computeQ(){
-		// first: compute query's df & tf
-		//Map<String, Integer> dfMap = new HashMap<String, Integer>();
-		Map<String, Integer> qTFMap = new HashMap<String, Integer>();
-			// for those relevant docs
-		for(Doc d : relevantDocs){
-			d.computeTermsWeight(relevantTermsWeight);
-			for(String term : query.getTermList()){
-				if(d.getTFMap().containsKey(term)){
-						// df
-					/
-					if(!dfMap.containsKey(term)){
-						dfMap.put(term, 0);
-					}
-					dfMap.put(term, dfMap.get(term)+1);
-                    /
-
-						// tf
-					if(!qTFMap.containsKey(term)){
-						qTFMap.put(term, 0);
-					}
-					qTFMap.put(term, qTFMap.get(term)+d.getTFMap().get(term));
-				}
-			}
-		}
-
-			// for those non-relevant docs
-		for(Doc d : nonrelevantDocs){
-			d.computeTermsWeight(nonrelevantTermsWeight);
-			for(String term : query.getTermList()){
-				if(d.getTFMap().containsKey(term)){
-						// df
-					/
-					if(!dfMap.containsKey(term)){
-						dfMap.put(term, 0);
-					}
-					dfMap.put(term, dfMap.get(term)+1);
-					/
-						// tf
-					if(!qTFMap.containsKey(term)){
-						qTFMap.put(term, 0);
-					}
-					qTFMap.put(term, qTFMap.get(term)+d.getTFMap().get(term));
-				}
-			}
-		}
-
-		// Second: compute query's weight
-
-		qTermsWeight = query.getQTermsWeight(dfMap, qTFMap);
-
-		// get Q vector
-
-	}
-    */
-
-
 	private void computeAllWeight() {
 
         // add q_i-1
@@ -207,12 +146,17 @@ class Rocchio{
             System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
         
         int cnt = 0;
+        int limit = oldQueryStrsSet.size();
         for(Pair pair : pairList) {
-            if(!oldQueryStrsSet.contains(pair.k)) {
+            if(!oldQueryStrsSet.contains(pair.k)&&cnt<2) {
                 sb.append(pair.k + " ");
                 cnt++;
-                if(cnt >= 2) break;
             }
+            if(oldQueryStrsSet.contains(pair.k)&&limit>0){
+                sb.append(pair.k + " ");
+                limit--;
+            }
+            if(cnt==2&&limit==0) break;
         }
         sb.setLength(sb.length() - 1);
         return sb.toString();
