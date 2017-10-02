@@ -202,10 +202,10 @@ class Rocchio{
             }
         });
 
-        /*
+
         for(int i = 0; i < 10 && i < pairList.size(); i++)
             System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
-        */
+        
         int cnt = 0;
         for(Pair pair : pairList) {
             if(!oldQueryStrsSet.contains(pair.k)) {
