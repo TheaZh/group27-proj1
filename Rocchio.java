@@ -207,12 +207,17 @@ class Rocchio{
             System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
         */
         int cnt = 0;
+        int limit = oldQueryStrsSet.size();
         for(Pair pair : pairList) {
-            if(!oldQueryStrsSet.contains(pair.k)) {
+            if(!oldQueryStrsSet.contains(pair.k)&&cnt<2) {
                 sb.append(pair.k + " ");
                 cnt++;
-                if(cnt >= 2) break;
             }
+            if(oldQueryStrsSet.contains(pair.k)&&limit>0){
+                sb.append(pair.k + " ");
+                limit--;
+            }
+            if(cnt==2&&limit==0) break;
         }
         sb.setLength(sb.length() - 1);
         return sb.toString();
