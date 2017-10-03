@@ -13,26 +13,27 @@ Group Member
 
 Files
 --------
-      ├── libs
-      │   ├── google-api-client-1.22.0.jar
-      │   ├── google-api-client-jackson2-1.22.0.jar
-      │   ├── google-api-services-customsearch-v1-rev56-1.22.0.jar
-      │   ├── google-http-client-1.22.0.jar
-      │   ├── google-http-client-jackson2-1.22.0.jar
-      │   ├── httpclient-4.0.1.jar
-      │   └── jackson-core-2.1.3.jar
-      ├── sup
-      │   ├── proj1-stopword.txt
-      │   └── formula.png
-      ├── Makefile
-      ├── Doc.java
-      ├── Filter.java
-      ├── GoogleSearch
-      ├── GoogleSearch.java
-      ├── Query.java
-      ├── Rocchio.java
-      ├── README.md
-      └── transcript.txt
+	└── IR-system
+	    ├── libs
+	    │   ├── google-api-client-1.22.0.jar
+	    │   ├── google-api-client-jackson2-1.22.0.jar
+	    │   ├── google-api-services-customsearch-v1-rev56-1.22.0.jar
+	    │   ├── google-http-client-1.22.0.jar
+	    │   ├── google-http-client-jackson2-1.22.0.jar
+	    │   ├── httpclient-4.0.1.jar
+	    │   └── jackson-core-2.1.3.jar
+	    ├── sup
+	    │   ├── proj1-stopword.txt
+	    │   └── formula.png
+	    ├── Makefile
+	    ├── Doc.java
+	    ├── Filter.java
+	    ├── GoogleSearch
+	    ├── GoogleSearch.java
+	    ├── Query.java
+	    ├── Rocchio.java
+	    ├── README.md
+	    └── transcript.txt
 
 
 Run
