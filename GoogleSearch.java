@@ -162,7 +162,7 @@ public class GoogleSearch {
             System.out.println("Query     =  " + search.query);
             System.out.println("Precision = " + this_precision);
             if(this_precision >= precision) {
-                System.out.println("Desired precision reached, done";
+                System.out.println("Desired precision reached, done");
                 System.out.println("Stop at round " + round);
                 break;
             }
