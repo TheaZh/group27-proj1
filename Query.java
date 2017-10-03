@@ -44,7 +44,7 @@ class Query{
         for(String term : this.searchWords) {
             int df = dfMap.get(term);
             int tf = 1;  // in q query each word frequency should be 1
-            double weight = (double)tf * (Math.log(10.0/df) + 1);
+            double weight = (double)tf * 1.0;
             qTermsWeight.put(term, weight);
         }
 
