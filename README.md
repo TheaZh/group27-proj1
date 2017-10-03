@@ -13,15 +13,6 @@ Group Member
    
 Files
 --------
-      ├── Doc.java
-      ├── Filter.java
-      ├── GoogleSearch
-      ├── GoogleSearch.java
-      ├── Makefile
-      ├── Query.java
-      ├── README.md
-      ├── Rocchio.java
-      ├── file.txt
       ├── libs
       │   ├── google-api-client-1.22.0.jar
       │   ├── google-api-client-jackson2-1.22.0.jar
@@ -32,7 +23,16 @@ Files
       │   └── jackson-core-2.1.3.jar
       ├── sup
       │   └── proj1-stopword.txt
+      ├── Makefile
+      ├── Doc.java
+      ├── Filter.java
+      ├── GoogleSearch
+      ├── GoogleSearch.java
+      ├── Query.java
+      ├── Rocchio.java
+      ├── README.md
       └── transcript.txt
+
 
 Run
 --------
