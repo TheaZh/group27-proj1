@@ -94,6 +94,8 @@ Query modification method
   Tobias Liland Bjormyr, [Deep Learning with emphasis on extracting information from text data](https://daim.idi.ntnu.no/masteroppgaver/013/13216/masteroppgave.pdf), Section 3.2.2.2
 
 3. Implement Rocchio’s Algorithm to compute new weight of words ( vector __q<sub>i\+1</sub>__). 
+
+	<img src="https://github.com/petercanmakit/IR-system/blob/master/sup/formula.png" width="600">
 	
          new weight of a word =  Alpha * (original weight in vector qi) 
                                  + Beta * (tf-idf weight in relevant results) 
