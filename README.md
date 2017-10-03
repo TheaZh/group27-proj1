@@ -91,7 +91,7 @@ Query modification method
 
   __Reference__: 
   
-  Tobias Liland Bjormyr, Deep Learning with emphasis on extracting information from text data, Section 3.2.2.2
+  Tobias Liland Bjormyr, [Deep Learning with emphasis on extracting information from text data](https://daim.idi.ntnu.no/masteroppgaver/013/13216/masteroppgave.pdf), Section 3.2.2.2
 
 3. Implement Rocchio’s Algorithm to compute new weight of words ( vector __q<sub>i\+1</sub>__). 
 	
