@@ -22,7 +22,8 @@ Files
       │   ├── httpclient-4.0.1.jar
       │   └── jackson-core-2.1.3.jar
       ├── sup
-      │   └── proj1-stopword.txt
+      │   ├── proj1-stopword.txt
+      │   └── formula.png
       ├── Makefile
       ├── Doc.java
       ├── Filter.java
