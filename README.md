@@ -61,11 +61,7 @@ Keys
 2. Google Custom Search Engine ID
 
          018258045116810257593:z1fmkqqt_di
-
-Internal Design
---------
-
-
+  
 Query modification method
 --------
 1. Use the Rocchio algorithm
