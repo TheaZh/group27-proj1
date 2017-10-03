@@ -66,7 +66,19 @@ Keys
 2. Google Custom Search Engine ID
 
          018258045116810257593:z1fmkqqt_di
-  
+
+Internal Design
+---------
+1. We get the original query from users input. Then, we stores query as a customized Query type. In this class, we compute the initial __q<sub>i</sub>__ vector (tf-idf weight).
+
+2. After searching the query in Google CSE, user can get 10 results and each result contains URL, title and its summary. The result will display one by one, and at the end of each result, user is requested to determine whether it is relevant to what he wants to search by inputing “Y” as yes and “N” as no.
+
+3. We combine each result’s title and summary as a String, and then store it as a Doc type which is a customized class. For each Doc, we compute its term frequency and tf-idf weight, which are stored in two HashMap.
+
+4. Based on user’s feedback, we have two ArrayLists. One list stores relevant Docs, and the other store non-relevant Docs. According to these two list, we compute two HashMap. One stores word-weight pairs in relevant docs, and the other stores pairs in non-relevant docs.
+
+5. We put the main computing part in a while loop, and the loop will only be broken when the desired precision is reached or the precision is 0. Therefore, if the precision is still below the desired precision, given the __q__ vector and two word-weight HashMap, we implement Rocchio’s Algorithm to get new query. The expanded query will be automatically searched in Google CSE and a new round starts.
+
 Query modification method
 --------
 1. Use the Rocchio algorithm
