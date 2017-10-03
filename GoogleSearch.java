@@ -93,6 +93,12 @@ public class GoogleSearch {
             System.out.println("           Round "+ ++round);
             System.out.println("-------------------------------");
             System.out.println("Now the query is: " + search.query);
+            System.out.println("Parameters: ");
+            System.out.println("Client Key = " + search.API_KEY);
+            System.out.println("Engine Key = " + search.ENGINE_KEY);
+            System.out.println("Query      = " + search.query);
+            System.out.println("Precision  = " + precision);
+            System.out.println("Google Search Results:\n======================");
             List<Result> items = search.getItems();
             // each doc is a string, 10 doc in a list
             List<String> docsStrList = search.getDocsStrings(items);
@@ -112,11 +118,11 @@ public class GoogleSearch {
 
                 Result result = items.get(i);
                 System.out.println("");
-                System.out.println("===Result " + (i+1) + "===" );
-                System.out.println("- Title   : "+ result.getTitle());
-                System.out.println("- URL     : " + result.getLink());
-                System.out.println("- Snippet : " + result.getSnippet());
-                System.out.println("");
+                System.out.println("Result " + (i+1) + "\n[" );
+                System.out.println(" URL: " + result.getLink());
+                System.out.println(" Title: "+ result.getTitle());
+                System.out.println(" Summary: " + result.getSnippet());
+                System.out.println("]");
                 System.out.print("Is it relevant? (Y/N): ");
                 String feedback = sc.nextLine();
                 if(feedback.toLowerCase().equals("y")) {

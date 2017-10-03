@@ -32,7 +32,7 @@ class Query{
         dfMap.put("mask",2);dfMap.put("table",9);dfMap.put("cost",1);dfMap.put("ask",4);
 
         Query query = new Query(searchWord, dfMap);
-        System.out.println("This query vector is: " + query.getQTermsWeight().toString());
+        //System.out.println("This query vector is: " + query.getQTermsWeight().toString());
     }
 
     public List<String> getTermList(){
