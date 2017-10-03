@@ -97,6 +97,8 @@ Query modification method
 
 	<img src="https://github.com/petercanmakit/IR-system/blob/master/sup/formula.png" width="600">
 	
+   That is,
+	
          new weight of a word =  Alpha * (original weight in vector qi) 
                                  + Beta * (tf-idf weight in relevant results) 
 				 	  - Gamma * (tf-idf weight in non-relevant results)
