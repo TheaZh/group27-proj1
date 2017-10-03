@@ -97,6 +97,7 @@ Query modification method
 	
          new weight of a word =  Alpha * (original weight in vector qi) 
                                  + Beta * (tf-idf weight in relevant results) 
-                                 - Gamma * (tf-idf weight in non-relevant results)
+				 	  - Gamma * (tf-idf weight in non-relevant results)
+				 
    In our project, we implement Alpha = 1.0, Beta = 0.75, Gamma = 0.15.
 4. According to the new vector, choose two terms that have the heavies weight and are not in the old query. Sort two new terms and old query according to their weight. The order of keywords may vary during each iteration.
