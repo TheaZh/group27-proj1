@@ -2,19 +2,19 @@ import java.util.*;
 class Rocchio{
 
     public Query query;
-	private List<Doc> relevantDocs;
-	private List<Doc> nonrelevantDocs;
-	private Map<String, Integer> dfMap;         // doc frequency
+    private List<Doc> relevantDocs;
+    private List<Doc> nonrelevantDocs;
+    private Map<String, Integer> dfMap;         // doc frequency
     public Map<String, Double> qTermsWeight;    // q vector
     public Map<String, Double> vector;          // final Result for this round
 
     // three parameters
-	private final double ALPHA = 1.0;
-	private final double BETA = 0.75;
-	private final double GAMMA = 0.15;
+    private final double ALPHA = 1.0;
+    private final double BETA = 0.75;
+    private final double GAMMA = 0.15;
 
     // debug
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         String pass1 = "BlueJ. A free Java Development Environment designed for beginners, used by millions worldwide. Find out more... One of my favourite IDEs out there is BlueJ";
         String pass2 = "What are the hours of the Blue Java Coffee Bar in Butler Library? Question: What are the hours of the Blue Java Coffee Bar in Butler Library? Answer: See the ...";
 
@@ -35,7 +35,7 @@ class Rocchio{
         Query q = new Query(queryStr, filter.getDfMap());
         Rocchio algo = new Rocchio(q, filter.getDfMap(), relDocList, nonRelList);
         System.out.println("The new qeury is: " + algo.getNewQueryStr());
-	}
+    }
 
     /**
     * Constructs a Rocchio object with relevant doc and non-relevant docs
@@ -44,23 +44,23 @@ class Rocchio{
     * @param nonRelList the list of non-relevant docs
     * @return a new Rocchio object
     */
-	public Rocchio(Query queryIn, Map<String, Integer> df, List<Doc> relDocList, List<Doc> nonRelList){
+    public Rocchio(Query queryIn, Map<String, Integer> df, List<Doc> relDocList, List<Doc> nonRelList){
         query = queryIn;
         dfMap = df;
-		relevantDocs = relDocList;
-		nonrelevantDocs = nonRelList;
+        relevantDocs = relDocList;
+        nonrelevantDocs = nonRelList;
         vector = new  HashMap<String, Double>();
         qTermsWeight = query.getQTermsWeight();
 
         computeAllWeight();
-	}
+    }
 
-	private void computeAllWeight() {
+    private void computeAllWeight() {
 
         // add q_i-1
-		for(String term : qTermsWeight.keySet()){
-			vector.put(term, qTermsWeight.get(term)*ALPHA);
-		}
+        for(String term : qTermsWeight.keySet()){
+            vector.put(term, qTermsWeight.get(term)*ALPHA);
+        }
 
         // sum up two weight vector and compute |R| and |NR|
         // sum up relevantTermsWeight
@@ -82,33 +82,33 @@ class Rocchio{
             }
         }
         // compute |R| and |NR|
-		double relNom = 0, nonRelNom = 0;
-		for(Double val : relevantTermsWeight.values()){
-			relNom += val * val;
-		}
-		for(Double val : nonrelevantTermsWeight.values()){
-			nonRelNom += val * val;
-		}
-		relNom = Math.sqrt(relNom);
-		nonRelNom = Math.sqrt(nonRelNom);
+        double relNom = 0, nonRelNom = 0;
+        for(Double val : relevantTermsWeight.values()){
+            relNom += val * val;
+        }
+        for(Double val : nonrelevantTermsWeight.values()){
+            nonRelNom += val * val;
+        }
+        relNom = Math.sqrt(relNom);
+        nonRelNom = Math.sqrt(nonRelNom);
 
         // add these to vector
-		for(String term : relevantTermsWeight.keySet()) {//!!!!!!!!!!!!!!!!
-			double relevant = BETA * relevantTermsWeight.get(term) / relNom;
-			if(!vector.containsKey(term)){
-				vector.put(term, 0.0);
-			}
-			vector.put(term, vector.get(term) + relevant);
-		}
+        for(String term : relevantTermsWeight.keySet()) {//!!!!!!!!!!!!!!!!
+            double relevant = BETA * relevantTermsWeight.get(term) / relNom;
+            if(!vector.containsKey(term)){
+                vector.put(term, 0.0);
+            }
+            vector.put(term, vector.get(term) + relevant);
+        }
         for(String term : nonrelevantTermsWeight.keySet()) {//!!!!!!!!!!!!!!!!
-			double non_relevant = (GAMMA * nonrelevantTermsWeight.get(term)/nonRelNom);
-			if(!vector.containsKey(term)){
-				vector.put(term, 0.0);
-			}
-			vector.put(term, vector.get(term) - non_relevant);
-		}
+            double non_relevant = (GAMMA * nonrelevantTermsWeight.get(term)/nonRelNom);
+            if(!vector.containsKey(term)){
+                vector.put(term, 0.0);
+            }
+            vector.put(term, vector.get(term) - non_relevant);
+        }
         // now vector is the new q_i
-	}
+    }
 
     class Pair {
         String k;
@@ -124,7 +124,7 @@ class Rocchio{
         Set<String> oldQueryStrsSet = this.query.searchWords;
 
         StringBuilder sb = new StringBuilder();
-        for(String str : oldQueryStrsList) sb.append(str + " ");
+        //for(String str : oldQueryStrsList) sb.append(str + " ");
 
         // sort vector by weights
         List<Pair> pairList = new ArrayList<>();
@@ -135,15 +135,15 @@ class Rocchio{
         Collections.sort(pairList, new Comparator<Pair>() {
             @Override
             public int compare(Pair a, Pair b) {
-                if(a.v < b.v) return 1;
-                if(a.v > b.v) return -1;
-                return 0;
+
+                return Double.compare(b.v, a.v);
             }
         });
 
-
+        /*
         for(int i = 0; i < 10 && i < pairList.size(); i++)
             System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
+        */
         
         int cnt = 0;
         int limit = oldQueryStrsSet.size();

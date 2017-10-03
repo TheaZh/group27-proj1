@@ -27,7 +27,7 @@ class Doc{
     * This method computes the weight for each term in this doc.
     * after calling this method, you can refer this.termsWeight as its Doc vector
     * @param documentString The list of document effective strings.
-    * @param dfMap The map: term -> document frequency.
+    * @param df The map: term -> document frequency.
     */
     public void computeTermsWeight(Map<String, Integer> df){
         dfMap = df;
@@ -38,8 +38,29 @@ class Doc{
                 termsWeight.put(term, 0.0);
             }
 
-            double weight =(double)Math.log10(1.0+fre) * Math.log10(10.0/dfMap.get(term));
-            termsWeight.put(term, termsWeight.get(term)+weight);
+            double weight =(double)fre * (Math.log(10.0/dfMap.get(term)) + 1.0);
+            termsWeight.put(term, termsWeight.get(term) + weight);
+        }
+
+        normalize();
+        System.out.println(termsWeight.toString());
+    }
+
+    /**
+    * Nomalize a termsWeight
+    */
+
+    private void normalize() {
+        double card = 0.0;
+        for(String key : termsWeight.keySet()) {
+            double weight = termsWeight.get(key);
+            card += weight * weight;
+        }
+        card = Math.sqrt(card);
+
+        for(String key : termsWeight.keySet()) {
+            double weight = termsWeight.get(key);
+            termsWeight.put(key, weight / card);
         }
     }
 
@@ -52,20 +73,26 @@ class Doc{
 
     // test
     public static void main(String[] args) {
-        List<String> strs = new ArrayList<>(Arrays.asList("java", "blue", "cafe", "coffee", "coffee", "java", "java"));
+        List<String> strs1 = new ArrayList<>(Arrays.asList("jiajun", "zhan", "zheng", "zheng", "sample"));
+        List<String> strs2 = new ArrayList<>(Arrays.asList("jiajun", "zhan", "jia", "jia", "example", "example", "example"));
         Map<String, Integer> df = new HashMap<>();
-        df.put("java", 10); df.put("cafe", 5); df.put("coffee", 7);
-        df.put("blue", 9); df.put("red", 6);
+        df.put("jiajun", 2); df.put("zhan", 2); df.put("zheng", 1);
+        df.put("sample", 1); df.put("jia", 1); df.put("example", 1);
 
-        Doc testDoc = new Doc(strs);
+        Doc testDoc1 = new Doc(strs1);
+        Doc testDoc2 = new Doc(strs2);
         // print the term frequency table
-        System.out.println("term frequency: " + testDoc.tfMap.toString());
+        System.out.println("term frequency 1: " + testDoc1.tfMap.toString());
+        System.out.println("term frequency 1: " + testDoc2.tfMap.toString());
 
-        testDoc.computeTermsWeight(df);
+        testDoc1.computeTermsWeight(df);
+        testDoc2.computeTermsWeight(df);
         // print the document frequency table
-        System.out.println("doc frequency: " + testDoc.dfMap.toString());
+        System.out.println("doc frequency 1: " + testDoc1.dfMap.toString());
+        System.out.println("doc frequency 2: " + testDoc2.dfMap.toString());
         // print doc vector
-        System.out.println("term weight: " + testDoc.termsWeight.toString());
+        System.out.println("term weight 1: " + testDoc1.termsWeight.toString());
+        System.out.println("term weight 2: " + testDoc2.termsWeight.toString());
     }
 
 

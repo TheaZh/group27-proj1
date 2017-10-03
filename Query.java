@@ -44,8 +44,28 @@ class Query{
         for(String term : this.searchWords) {
             int df = dfMap.get(term);
             int tf = 1;  // in q query each word frequency should be 1
-            double weight = (double)Math.log10(1.0+tf) * Math.log10(10.0/df);
+            double weight = (double)tf * (Math.log(10.0/df) + 1);
             qTermsWeight.put(term, weight);
+        }
+
+        normalize();
+    }
+
+    /**
+    * Nomalize a termsWeight
+    */
+
+    private void normalize() {
+        double card = 0.0;
+        for(String key : qTermsWeight.keySet()) {
+            double weight = qTermsWeight.get(key);
+            card += weight * weight;
+        }
+        card = Math.sqrt(card);
+
+        for(String key : qTermsWeight.keySet()) {
+            double weight = qTermsWeight.get(key);
+            qTermsWeight.put(key, weight / card);
         }
     }
 

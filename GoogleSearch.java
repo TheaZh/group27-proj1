@@ -117,9 +117,9 @@ public class GoogleSearch {
                 System.out.println("- URL     : " + result.getLink());
                 System.out.println("- Snippet : " + result.getSnippet());
                 System.out.println("");
-                System.out.print("Is it relevant? (Yes/No): ");
+                System.out.print("Is it relevant? (Y/N): ");
                 String feedback = sc.nextLine();
-                if(feedback.toLowerCase().equals("yes")) {
+                if(feedback.toLowerCase().equals("y")) {
                     System.out.println("This is relevant.");
                     isRelevant.add(true);
                 }
