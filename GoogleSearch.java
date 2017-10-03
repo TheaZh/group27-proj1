@@ -159,7 +159,7 @@ public class GoogleSearch {
             }
             float this_precision = (float)relDocList.size() / (float) docsList.size();
             System.out.println("======================\nFEEDBACK SUMMARY");
-            System.out.println("Query     =  " + search.query);
+            System.out.println("Query     = " + search.query);
             System.out.println("Precision = " + this_precision);
             if(this_precision >= precision) {
                 System.out.println("Desired precision reached, done");
