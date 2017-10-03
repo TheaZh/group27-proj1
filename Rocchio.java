@@ -140,11 +140,19 @@ class Rocchio{
             }
         });
 
+<<<<<<< HEAD
         /*
         for(int i = 0; i < 10 && i < pairList.size(); i++)
             System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
         */
 
+=======
+        
+        // for(int i = 0; i < 10 && i < pairList.size(); i++)
+        //     System.out.println(pairList.get(i).k+": "+pairList.get(i).v);
+        
+        
+>>>>>>> 58654b6ee5057fe4d8eaa49c7a4700a5d7d204ac
         int cnt = 0;
         int limit = oldQueryStrsSet.size();
         for(Pair pair : pairList) {

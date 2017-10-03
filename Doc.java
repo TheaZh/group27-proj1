@@ -43,7 +43,7 @@ class Doc{
         }
 
         normalize();
-        System.out.println(termsWeight.toString());
+        //System.out.println(termsWeight.toString());
     }
 
     /**
