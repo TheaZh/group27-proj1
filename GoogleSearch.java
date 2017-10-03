@@ -74,7 +74,7 @@ public class GoogleSearch {
         if(args.length >= 4) {
             search.API_KEY = args[0];
             search.ENGINE_KEY = args[1];
-            precision = Float.parseFloat(args[2]);
+            precision = Float.parseFloat(args[2]); //desired precision 
             query.clear();
             for(int i = 3; i < args.length; i++) query.add(args[i]);
             StringBuilder querySb = new StringBuilder();
@@ -122,15 +122,15 @@ public class GoogleSearch {
                 System.out.println(" URL: " + result.getLink());
                 System.out.println(" Title: "+ result.getTitle());
                 System.out.println(" Summary: " + result.getSnippet());
-                System.out.println("]");
-                System.out.print("Is it relevant? (Y/N): ");
+                System.out.println("]\n");
+                System.out.print("Relevant? (Y/N)? ");
                 String feedback = sc.nextLine();
                 if(feedback.toLowerCase().equals("y")) {
-                    System.out.println("This is relevant.");
+                    //System.out.println("This is relevant.");
                     isRelevant.add(true);
                 }
                 else { // "n"
-                    System.out.println("This is NOT relevant.");
+                    //System.out.println("This is NOT relevant.");
                     isRelevant.add(false);
                 }
                 //System.out.println("------------");
@@ -158,17 +158,17 @@ public class GoogleSearch {
                 }
             }
             float this_precision = (float)relDocList.size() / (float) docsList.size();
-            System.out.println("");
-            System.out.println("");
-            System.out.println("Precision is " + this_precision);
+            System.out.println("======================\nFEEDBACK SUMMARY");
+            System.out.println("Query     =  " + search.query);
+            System.out.println("Precision = " + this_precision);
             if(this_precision >= precision) {
-                System.out.println("Precision >= " + precision);
+                System.out.println("Desired precision reached, done";
                 System.out.println("Stop at round " + round);
                 break;
             }
             else if(this_precision <= 0) {
                 System.out.println("Precision = 0");
-                System.out.println("---Stop at round " + round +"---");
+                System.out.println("Stop at round " + round);
                 break;
             }
 
@@ -181,6 +181,8 @@ public class GoogleSearch {
             */
             // TODO update the query using Rocchio
             // search.query = "java is good";
+            System.out.println("Still below the desired precision of " + precision);
+            System.out.println("Indexing results ...");
             Query q = new Query(search.query, filter.getDfMap());
             // System.out.println("q vector: " + q.qTermsWeight.toString());
             Rocchio algo = new Rocchio(q, filter.getDfMap(), relDocList, nonRelList);
