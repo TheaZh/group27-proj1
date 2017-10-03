@@ -81,6 +81,22 @@ Internal Design
 
 Query modification method
 --------
-1. Use the Rocchio algorithm to compute new __q<sub>i\+1</sub>__ vector. The formula is slightly different from class lecture but the same as sikit-learn implementation in order to get better accuracy.
-2. Sort all the terms by their new weights. Choose the heaviest two terms that are not in the old query __q<sub>i</sub>__. Then use the new query to search on Google CSE.
-3. Note that during each iteration, the order of original terms from previous iteration may vary, and here we use the new order to generate the new query.
+1. Given the original query, firstly compute the __q<sub>i</sub>__ vector, in which each element is the tf-idf weight of each word.
+
+2. Based on Google Search results and user’s feedback, two vectors are computed. One stores tf-idf weight of words in relevant results and the other stores tf-idf weight of words in non-relevant results. Then normalized them separately.
+
+   The formula to compute tf-idf weight is :
+
+         tf-idf = tf * (1 + idf) = tf * (1 + log(N/df))
+
+  __Reference__: 
+  
+  Tobias Liland Bjormyr, Deep Learning with emphasis on extracting information from text data, Section 3.2.2.2
+
+3. Implement Rocchio’s Algorithm to compute new weight of words ( vector __q<sub>i\+1</sub>__). 
+	
+         new weight of a word =  Alpha * (original weight in vector qi) 
+                                 + Beta * (tf-idf weight in relevant results) 
+                                 - Gamma * (tf-idf weight in non-relevant results)
+   In our project, we implement Alpha = 1.0, Beta = 0.75, Gamma = 0.15.
+4. According to the new vector, choose two terms that have the heavies weight and are not in the old query. Sort two new terms and old query according to their weight. The order of keywords may vary during each iteration.
