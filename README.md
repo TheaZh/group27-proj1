@@ -89,7 +89,7 @@ Query modification method
 
          tf-idf = tf * (1 + idf) = tf * (1 + log(N/df))
 
-  __Reference__: 
+  **Reference:** 
   
   Tobias Liland Bjormyr, [Deep Learning with emphasis on extracting information from text data](https://daim.idi.ntnu.no/masteroppgaver/013/13216/masteroppgave.pdf), Section 3.2.2.2
 
