@@ -40,29 +40,37 @@ Run
 --------
 1. Install Java
 
-		# Under Ubuntu 14.04 LTS
+	Run under Ubuntu 14.04 LTS
+ 
 		sudo apt-get update
-		# install git if you haven't
+	Install git if you haven't
+
 		sudo apt-get install git
-		# install make if you have't
+	Install make if you have't
+
 		sudo apt-get install build-essential
-		# install oracle java 8 if you haven't
+	Install oracle java 8 if you haven't
+
 		sudo apt-get install python-software-properties
 		sudo add-apt-repository ppa:webupd8team/java
 		sudo apt-get update # make sure you do this
-		sudo apt-get install oracle-java8-installer # remeber to choose to agree th license
-		# set default version if you have other versions
+			# remeber to choose to agree the license
+		sudo apt-get install oracle-java8-installer 
+	Set default version if you have other versions
+
 		sudo update-alternatives --config java
 		sudo update-alternatives --config javac
 		sudo update-alternatives --config javaws
-		
-		# after this when you check java version by 
+
+	After this when you check java version by 
+
 		java -version
-		# you can see the version is 8
-		# java version "1.8.0_144"
-		# Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
-		# Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
-	
+	you can see the version is 8
+
+		java version "1.8.0_144"
+		Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+		Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+
 2. Clone project
 
         git clone https://github.com/petercanmakit/group27-proj1.git
