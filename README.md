@@ -53,7 +53,8 @@ Run
 
 		sudo apt-get install python-software-properties
 		sudo add-apt-repository ppa:webupd8team/java
-		sudo apt-get update # make sure you do this
+			# make sure you do this
+		sudo apt-get update
 			# remeber to choose to agree the license
 		sudo apt-get install oracle-java8-installer 
 	Set default version if you have other versions
