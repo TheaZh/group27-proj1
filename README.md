@@ -38,21 +38,28 @@ Files
 
 Run
 --------
-1. Clone project
+1. Install Java
 
-        $ git clone https://github.com/petercanmakit/group27-proj1.git
+		sudo apt-get update
+		sudo apt-get install build-essential
+		sudo apt-get install default-jre
+		sudo apt-get install default-jdk
 	
-2. Navigate to folder
+2. Clone project
 
-		$ cd ./group27-proj1
+        git clone https://github.com/petercanmakit/group27-proj1.git
 	
-3. Install dependencies
+3. Navigate to folder
 
-        $ make
+		cd ./group27-proj1
+	
+4. Install dependencies
 
-4. Run
+        make
 
-        $ ./GoogleSearch <google api key> <google engine id> <precision> <query>
+5. Run
+
+        ./GoogleSearch <google api key> <google engine id> <precision> <query>
 
    \<google api key> -- your Google Custom Search API Key
 
