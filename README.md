@@ -40,7 +40,7 @@ Run
 --------
 1. Clone project
 
-        $ git clone https://github.com/petercanmakit/IR-system.git
+        $ git clone https://github.com/petercanmakit/group27-proj1.git
 	
 2. Navigate to folder
 
