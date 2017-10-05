@@ -75,7 +75,7 @@ Internal Design
 
 2. After searching the query in Google CSE, user can get 10 results and each result contains URL, title and its summary. The result will display one by one, and at the end of each result, user is requested to determine whether it is relevant to what he wants to search by inputing “Y” as yes and “N” as no.
 
-3. We combine each result’s title and summary as a String, and then use a filter method (which is defined in Filter class) to eliminate stopwords. Then store it as a Doc type which is a customized class. For each Doc, we compute its term frequency and tf-idf weight, which are stored in two HashMap.
+3. We combine each result’s title and summary as a String, and then use a filter method (which is defined in Filter class) to eliminate stopwords. Note that instead strcitly eliminating all words that show in "proj1-stopword.txt" file, we skip those words which are contained in the original query. Then store the filtered string as a Doc type (Doc is a customized class). For each Doc, we compute its term frequency and tf-idf weight, which are stored in two HashMap.
 
 4. Based on user’s feedback, we have two ArrayLists. One list stores relevant Docs, and the other store non-relevant Docs. According to these two list, we compute two HashMap. One stores word-weight pairs in relevant docs, and the other stores pairs in non-relevant docs.
 
