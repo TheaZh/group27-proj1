@@ -1,4 +1,4 @@
-# IR System
+# COMS6111 Project 1
 COMS6111 Project1
 
 Group Name
