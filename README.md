@@ -41,13 +41,16 @@ Run
 1. Clone project
 
         $ git clone https://github.com/petercanmakit/IR-system.git
-        
-2. Install dependencies
+	
+2. Navigate to folder
 
-        $ cd ./group27-proj1
+		$ cd ./group27-proj1
+	
+3. Install dependencies
+
         $ make
 
-3. Run
+4. Run
 
         $ ./GoogleSearch <google api key> <google engine id> <precision> <query>
 
