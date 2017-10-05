@@ -9,8 +9,6 @@ Query      = per se
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:33:00 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
@@ -129,8 +127,6 @@ Query      = per se restaurant york
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:33:14 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
@@ -256,8 +252,6 @@ Query      = brin
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:34:16 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
@@ -376,8 +370,6 @@ Query      = brin sergey google
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:34:33 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
@@ -503,8 +495,6 @@ Query      = jaguar
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:35:52 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
@@ -624,8 +614,6 @@ Query      = jaguar panthera americas
 Precision  = 0.9
 Google Search Results:
 ======================
-Oct 02, 2017 9:36:06 PM com.google.api.client.googleapis.services.AbstractGoogleClient <init>
-WARNING: Application name is not set. Call Builder#setApplicationName.
 
 Result 1
 [
