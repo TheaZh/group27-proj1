@@ -40,7 +40,7 @@ Run
 --------
 1. Install Java
 
-		# Under Ubuntu 14
+		# Under Ubuntu 14.04 LTS
 		sudo apt-get update
 		# install git if you haven't
 		sudo apt-get install git
