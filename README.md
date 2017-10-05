@@ -44,7 +44,7 @@ Run
         
 2. Install dependencies
 
-        $ cd ./IR-system
+        $ cd ./group27-proj1
         $ make
 
 3. Run
