@@ -78,7 +78,8 @@ public class GoogleSearch {
             query.clear();
             for(int i = 3; i < args.length; i++) query.add(args[i]);
             StringBuilder querySb = new StringBuilder();
-            for(String str : query) querySb.append(str + " ");
+            // query to lowercase 
+            for(String str : query) querySb.append(str.toLowerCase() + " ");
             querySb.setLength(querySb.length() - 1);
             search.query = querySb.toString();
         }
