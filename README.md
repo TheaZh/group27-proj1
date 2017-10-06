@@ -13,8 +13,8 @@ Group Member
 
 Files
 --------
-	└── IR-system
-	    ├── libs
+	└── group27-proj1
+	    ├── libs
 	    │   ├── google-api-client-1.22.0.jar
 	    │   ├── google-api-client-jackson2-1.22.0.jar
 	    │   ├── google-api-services-customsearch-v1-rev56-1.22.0.jar
